@@ -5,7 +5,10 @@ const techStack = [
   { name: "HTML5", icon: "https://img.icons8.com/color/96/html-5--v1.png" },
   { name: "CSS3", icon: "https://img.icons8.com/color/96/css3.png" },
   { name: "JavaScript", icon: "https://img.icons8.com/color/96/javascript--v1.png" },
+  { name: "TypeScript", icon: "https://img.icons8.com/color/96/typescript.png" },
   { name: "React.js", icon: "https://img.icons8.com/color/96/react-native.png" },
+  { name: "React Native", icon: "https://img.icons8.com/color/96/react-native.png" },
+  { name: "Next.js", icon: "https://img.icons8.com/fluency/96/nextjs.png" },
   { name: "Vite", icon: "https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png" },
   { name: "Tailwind CSS", icon: "https://img.icons8.com/color/96/tailwind_css.png" },
   { name: "Framer Motion", icon: "https://cdn.worldvectorlogo.com/logos/framer-motion.svg" },
@@ -22,13 +25,13 @@ const techStack = [
 
 const TechStack = () => {
   return (
-    <section className="py-16 bg-[#0f0f0f] text-white flex justify-center px-4">
+    <section className="py-16 bg-gradient-to-br from-black via-indigo-950 to-indigo-900 text-white flex justify-center px-4">
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-8 text-white tracking-wide">
           My Tech Stack
         </h2>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-8 place-items-center w-full max-w-5xl mx-auto bg-[#1a1a1a] border border-gray-700 rounded-3xl p-8 shadow-2xl">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-8 place-items-center w-full max-w-5xl mx-auto bg-gradient-to-br from-black via-indigo-950 to-indigo-900 border border-indigo-800 rounded-3xl p-8 shadow-2xl">
           {techStack.map((tech, index) => (
             <motion.div
               key={tech.name}

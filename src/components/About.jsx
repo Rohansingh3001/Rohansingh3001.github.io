@@ -21,7 +21,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="relative min-h-screen flex flex-col items-center justify-center px-8 bg-gray-900 text-white text-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-8 pt-16 sm:pt-20 bg-gray-900 text-white text-center overflow-hidden"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -161,12 +161,20 @@ const About = () => {
       )}
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-12 flex gap-6">
-        <button onClick={handlePrev} className="text-white bg-gray-700 p-3 rounded-full hover:bg-gray-600">
-          <FaArrowLeft size={24} />
+      <div className="w-full flex justify-center mt-8 mb-2 sm:absolute sm:bottom-8 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:gap-2 z-30">
+        <button 
+          onClick={handlePrev} 
+          className="text-white bg-gray-700 p-2 sm:p-0.5 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition mx-1"
+          aria-label="Previous"
+        >
+          <FaArrowLeft size={16} className="sm:size-10" />
         </button>
-        <button onClick={handleNext} className="text-white bg-gray-700 p-3 rounded-full hover:bg-gray-600">
-          <FaArrowRight size={24} />
+        <button 
+          onClick={handleNext} 
+          className="text-white bg-gray-700 p-2 sm:p-0.5 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition mx-1"
+          aria-label="Next"
+        >
+          <FaArrowRight size={16} className="sm:size-10" />
         </button>
       </div>
     </motion.div>
