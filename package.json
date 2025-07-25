@@ -22,6 +22,7 @@
     "react-icons": "^5.5.0",
     "react-leaflet": "^5.0.0",
     "react-scroll": "^1.9.3",
+    "react-sticky": "^6.0.3",
     "scroll": "^3.0.1",
     "sticky": "^0.8.0",
     "tailwindcss": "^4.0.17",
