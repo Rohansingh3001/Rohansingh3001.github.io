@@ -4,13 +4,15 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     font-family: 'DM Sans', sans-serif;
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-      radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 40%),
-      linear-gradient(to bottom, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background: linear-gradient(to bottom, #FFFCF7 0%, #FFF8ED 50%, #FFFCF7 100%);
     min-height: 100vh;
+    position: relative;
   }
 }
 
@@ -82,12 +84,4 @@ body {
   }
 }
 
-/* Lazy Loading - Image fade in */
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-}
 
-img[loading="lazy"].loaded {
-  opacity: 1;
-}
