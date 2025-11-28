@@ -18,7 +18,7 @@ const Contact = () => {
           <span className="inline-block px-4 py-1 bg-[#DBEAFE] border-2 border-[#3B82F6]/40 rounded-full text-sm font-handwritten text-[#1E3A8A] mb-4 rotate-[1deg]">
             let''s connect
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#FDF9F3] mb-4 font-handwritten">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
             Let''s Build Something Together
           </h2>
           <div className="flex justify-center">

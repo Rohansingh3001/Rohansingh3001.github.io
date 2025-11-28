@@ -63,7 +63,7 @@ const TechStack = () => {
             my toolbox
           </span>
           
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#FDF9F3] mb-4" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
             Tech Stack
           </h2>
           

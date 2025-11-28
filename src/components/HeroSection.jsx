@@ -136,8 +136,8 @@ const HeroSection = () => {
                   </Link>
 
                   <motion.a
-                    href="/src/assets/resume.pdf"
-                    download
+                    href="/src/assets/Rohan_Resume (3).pdf"
+                    download="Rohan_Singh_Resume.pdf"
                     className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-[#E5D9C9] text-[#1F2933] rounded-lg font-semibold hover:bg-[#FDF9F3] transition-all duration-300 flex items-center justify-center gap-2"
                     whileHover={{ y: -2, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

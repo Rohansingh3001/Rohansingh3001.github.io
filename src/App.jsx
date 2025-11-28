@@ -31,10 +31,10 @@ function App() {
               left: `${cursorPosition.x}px`,
               top: `${cursorPosition.y}px`,
               transform: "translate(-50%, -50%)",
-              transition: "all 0.1s ease-out",
+              transition: "left 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), top 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             }}
           >
-            <div className="w-full h-full bg-[#FDF9F3] rounded-full opacity-50" />
+            <div className="w-full h-full bg-[#F97316] rounded-full opacity-60 shadow-lg" />
           </div>
 
           <Navbar />
