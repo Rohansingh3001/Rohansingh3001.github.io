@@ -31,11 +31,25 @@ function App() {
               left: `${cursorPosition.x}px`,
               top: `${cursorPosition.y}px`,
               transform: "translate(-50%, -50%)",
-              transition: "left 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), top 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             }}
           >
             <div className="w-full h-full bg-[#F97316] rounded-full opacity-60 shadow-lg" />
           </div>
+
+          {/* Tech Icon Cursor */}
+          <div
+            className="custom-cursor-tech fixed w-12 h-12 pointer-events-none z-[1000] hidden md:block opacity-0"
+            style={{
+              left: `${cursorPosition.x}px`,
+              top: `${cursorPosition.y}px`,
+              transform: "translate(-50%, -50%)",
+              transition: "opacity 0.2s ease",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.3))",
+            }}
+          />
 
           <Navbar />
           <HeroSection />

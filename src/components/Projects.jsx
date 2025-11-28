@@ -67,10 +67,6 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-1 bg-[#FEF3C7] border-2 border-[#FACC15]/40 rounded-full text-sm font-handwritten text-[#78350F] mb-4 rotate-[-1deg]">
-            things I''ve built
-          </span>
-          
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
             Featured Projects
           </h2>

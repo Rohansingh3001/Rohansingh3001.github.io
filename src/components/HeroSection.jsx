@@ -13,32 +13,55 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-20 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-20 pt-32 md:pt-20 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto relative z-10 w-full">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Main Paper Card - Hero Content */}
+          {/* Main Paper Card - Hero Content / ID Card on Mobile */}
           <motion.div
             className="lg:col-span-8 relative"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Paper Card */}
+            {/* Mobile: ID Card Layout, Desktop: Paper Card */}
             <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] px-8 py-10 sm:p-12">
-              {/* Tape Effect - Top Left */}
-              <div className="absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-2deg]" />
+              {/* ID Card Header Strip (Mobile only) */}
+              <div className="block lg:hidden absolute top-0 left-0 right-0 h-16 bg-gradient-to-r from-[#3B82F6] via-[#F97316] to-[#22C55E] rounded-t-xl">
+                <div className="absolute top-3 left-4 text-white font-bold text-sm">DEVELOPER ID</div>
+                <div className="absolute top-3 right-4 text-white font-bold text-xs">NIT'25</div>
+              </div>
               
-              {/* Tape Effect - Top Right */}
-              <div className="absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
+              {/* ID Card with Photo (Mobile) */}
+              <div className="block lg:hidden mt-8 mb-6">
+                <div className="flex items-start gap-4">
+                  {/* Profile Photo */}
+                  <img
+                    src={profilePic}
+                    alt="Rohan Singh"
+                    className="w-24 h-24 object-cover rounded-lg border-4 border-white shadow-lg"
+                  />
+                  {/* Info */}
+                  <div className="flex-1 space-y-1 pt-1">
+                    <div className="text-xs text-[#6B7280]">ID: RS-2025</div>
+                    <h1 className="text-2xl font-bold text-[#111827] font-handwritten leading-tight">Rohan Singh</h1>
+                    <p className="text-sm text-[#F97316] font-semibold">Full Stack Developer</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Tape Effect - Desktop only */}
+              <div className="hidden lg:block absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-2deg]" />
+              
+              <div className="hidden lg:block absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
 
               {/* Hand-drawn underline accent */}
               <div className="absolute top-16 left-8 h-1 w-32 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
 
               {/* Content */}
               <div className="space-y-6">
-                {/* Name with handwritten font */}
-                <div>
+                {/* Name with handwritten font - Desktop only */}
+                <div className="hidden lg:block">
                   <motion.h1
                     className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111827] font-handwritten mb-2"
                     initial={{ opacity: 0, x: -20 }}
@@ -52,6 +75,22 @@ const HeroSection = () => {
                   <span className="absolute top-12 right-8 text-2xl rotate-[15deg] opacity-70">
                     
                   </span>
+                </div>
+                
+                {/* ID Card Info Section (Mobile) */}
+                <div className="block lg:hidden space-y-3 pb-4 border-b-2 border-dashed border-[#E5D9C9]">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-[#6B7280]">Organization:</span>
+                    <span className="font-semibold text-[#111827]">GDGoC NIT'25</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-[#6B7280]">Role:</span>
+                    <span className="font-semibold text-[#111827]">Web Dev Associate</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-[#6B7280]">Founded:</span>
+                    <span className="font-semibold text-[#111827]">The MindMates</span>
+                  </div>
                 </div>
 
                 {/* Tagline */}
@@ -78,9 +117,9 @@ const HeroSection = () => {
                   and full-stack builder who loves turning ideas into reality.
                 </motion.p>
 
-                {/* Badges with hand-drawn circles */}
+                {/* Badges with hand-drawn circles - Desktop only */}
                 <motion.div
-                  className="flex flex-wrap gap-3 pt-4"
+                  className="hidden lg:flex flex-wrap gap-3 pt-4"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
@@ -136,8 +175,9 @@ const HeroSection = () => {
                   </Link>
 
                   <motion.a
-                    href="/src/assets/Rohan_Resume (3).pdf"
-                    download="Rohan_Singh_Resume.pdf"
+                    href="/src/assets/Rohan_Resume%20(3).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-[#E5D9C9] text-[#1F2933] rounded-lg font-semibold hover:bg-[#FDF9F3] transition-all duration-300 flex items-center justify-center gap-2"
                     whileHover={{ y: -2, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -179,9 +219,9 @@ const HeroSection = () => {
 
           {/* Right Side - Profile + Sticky Notes */}
           <div className="lg:col-span-4 space-y-6">
-            {/* Profile Image Card */}
+            {/* Profile Image Card - Hidden on Mobile */}
             <motion.div
-              className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_12px_30px_rgba(15,23,42,0.25)] p-6"
+              className="hidden lg:block relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_12px_30px_rgba(15,23,42,0.25)] p-6"
               initial={{ opacity: 0, y: 40, rotate: 2 }}
               animate={{ opacity: 1, y: 0, rotate: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}

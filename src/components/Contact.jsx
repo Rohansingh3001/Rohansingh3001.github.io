@@ -15,9 +15,6 @@ const Contact = () => {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div className="mb-12" initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <span className="inline-block px-4 py-1 bg-[#DBEAFE] border-2 border-[#3B82F6]/40 rounded-full text-sm font-handwritten text-[#1E3A8A] mb-4 rotate-[1deg]">
-            let''s connect
-          </span>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
             Let''s Build Something Together
           </h2>
