@@ -1,52 +1,64 @@
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import About from "./components/About";
-import PortfolioTape from "./components/tape"; // Imported PortfolioTape
+import Journey from "./components/Journey";
+import CommunityLeadership from "./components/CommunityLeadership";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import LoadingScreen from "./components/LoadingScreen";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <div>
-      <Navbar />
-      {/* Hero Section with Overlaying PortfolioTape */}
-      <div className="relative">
-        <HeroSection />
-        <div className="absolute bottom-[-40px] sm:bottom-[-60px] md:bottom-0 w-full z-10">
-          <PortfolioTape /> {/* Overlayed */}
-        </div>
-      </div>
+    <>
+      <AnimatePresence mode="wait">
+        {loading && (
+          <LoadingScreen onLoadingComplete={() => setLoading(false)} />
+        )}
+      </AnimatePresence>
 
-      <About />
-      <TechStack />
-      <Projects />
-      <Contact className="relative z-20" /> {/* Ensure Contact is above the overlay */}
-
-      {/* Floating Resume Download Modal */}
-      <div className="fixed bottom-4 right-4 z-50 flex items-center justify-end">
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full shadow-2xl flex items-center gap-2 animate-float-modal text-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 8l-4-4m4 4l4-4" /></svg>
-          <span className="font-semibold">Resume</span>
-          <a
-            href="/src/assets/resume.pdf"
-            download
-            className="bg-white text-indigo-600 font-bold px-3 py-1 rounded-full ml-1 shadow hover:bg-indigo-100 transition text-xs"
+      {!loading && (
+        <div className="relative min-h-screen">
+          {/* Custom Cursor Effect */}
+          <div
+            className="fixed w-6 h-6 pointer-events-none z-[999] mix-blend-difference hidden md:block"
+            style={{
+              left: `${cursorPosition.x}px`,
+              top: `${cursorPosition.y}px`,
+              transform: "translate(-50%, -50%)",
+              transition: "all 0.1s ease-out",
+            }}
           >
-            Download
-          </a>
+            <div className="w-full h-full bg-[#FDF9F3] rounded-full opacity-50" />
+          </div>
+
+          <Navbar />
+          <HeroSection />
+          <About />
+          <Journey />
+          <CommunityLeadership />
+          <TechStack />
+          <Projects />
+          <Contact className="relative z-20" />
+          <ScrollToTop />
         </div>
-      </div>
-      <style>{`
-        @keyframes float-modal {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        .animate-float-modal {
-          animation: float-modal 2.5s ease-in-out infinite;
-        }
-      `}</style>
-    </div>
+      )}
+    </>
   );
 }
 

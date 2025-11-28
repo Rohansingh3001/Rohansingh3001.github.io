@@ -1,71 +1,54 @@
-import {
-  FaInstagram,
-  FaLinkedin,
-  FaEnvelope,
-  FaTwitter,
-} from "react-icons/fa";
-import { SiX } from "react-icons/si"; // X (Twitter) Icon
+﻿import { motion } from "framer-motion";
+import { FaInstagram, FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 
 const Contact = () => {
+  const socialLinks = [
+    { href: "https://www.instagram.com/rohan_30.01/", icon: <FaInstagram />, label: "Instagram", color: "#F97316" },
+    { href: "https://www.linkedin.com/in/rohan-singh-033748243/", icon: <FaLinkedin />, label: "LinkedIn", color: "#3B82F6" },
+    { href: "https://github.com/Rohansingh3001", icon: <FaGithub />, label: "GitHub", color: "#111827" },
+    { href: "https://x.com/Rohan30_01", icon: <SiX />, label: "X", color: "#4B5563" },
+    { href: "mailto:rsingh300103@gmail.com", icon: <FaEnvelope />, label: "Email", color: "#22C55E" },
+  ];
+
   return (
-    <section
-      id="contact"
-      className="bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white px-6 py-20 relative z-10"
-    >
-      <div className="max-w-5xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl font-bold text-indigo-400 mb-4">
-          Let's Connect
-        </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
-          Feel free to reach out for collaborations, ideas, or just to say hi. I’m always excited to meet passionate people.
-        </p>
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.div className="mb-12" initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <span className="inline-block px-4 py-1 bg-[#DBEAFE] border-2 border-[#3B82F6]/40 rounded-full text-sm font-handwritten text-[#1E3A8A] mb-4 rotate-[1deg]">
+            let''s connect
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#FDF9F3] mb-4 font-handwritten">
+            Let''s Build Something Together
+          </h2>
+          <div className="flex justify-center">
+            <div className="h-1 w-32 bg-[#3B82F6]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
+          </div>
+        </motion.div>
 
-        {/* Social Links */}
-        <div className="flex justify-center items-center gap-8 flex-wrap mb-16">
-          {[
-            {
-              href: "https://www.instagram.com/rohan_30.01/",
-              icon: <FaInstagram size={28} />,
-              label: "Instagram",
-              hover: "hover:text-pink-500",
-            },
-            {
-              href: "https://www.linkedin.com/in/rohan-singh-033748243/",
-              icon: <FaLinkedin size={28} />,
-              label: "LinkedIn",
-              hover: "hover:text-blue-400",
-            },
-            {
-              href: "mailto:rsingh300103@gmail.com",
-              icon: <FaEnvelope size={28} />,
-              label: "Email",
-              hover: "hover:text-yellow-300",
-            },
-            {
-              href: "https://x.com/Rohan30_01",
-              icon: <SiX size={28} />,
-              label: "X (formerly Twitter)",
-              hover: "hover:text-gray-300",
-            },
-          ].map(({ href, icon, label, hover }, idx) => (
-            <a
-              key={idx}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className={`text-white transition duration-300 transform hover:scale-110 ${hover}`}
-            >
-              {icon}
-            </a>
-          ))}
-        </div>
+        <motion.div className="bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-8 sm:p-10 mb-12" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-24 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[2deg]" />
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">Got a project in mind?</h3>
+          <p className="text-[#4B5563] text-lg mb-6">From startups to hackathons, AI/ML to Web3—let''s create something impactful.</p>
+          <motion.a href="mailto:rsingh300103@gmail.com" className="inline-flex items-center gap-3 px-8 py-3 bg-[#F97316] text-white rounded-lg font-semibold shadow-md" whileHover={{ y: -3, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <FaEnvelope /> Send Me an Email
+          </motion.a>
+        </motion.div>
 
-        {/* Footer */}
-        <div className="border-t border-white/10 pt-6 text-sm text-white/40">
-          &copy; {new Date().getFullYear()} Rohan Singh. All rights reserved.
-        </div>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}>
+          <p className="text-[#FDF9F3] mb-6 font-handwritten text-lg">or connect with me on</p>
+          <div className="flex justify-center items-center gap-4 flex-wrap mb-12">
+            {socialLinks.map((social, index) => (
+              <motion.a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="p-4 bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-md transition-all" style={{ color: social.color }} initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + index * 0.1 }} whileHover={{ y: -5, rotate: index % 2 === 0 ? -3 : 3, scale: 1.15 }} whileTap={{ scale: 0.95 }}>
+                <div className="text-3xl">{social.icon}</div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div className="pt-8 border-t-2 border-[#FDF9F3]/20" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.8 }}>
+          <p className="text-[#FDF9F3]/60 text-sm font-handwritten">Designed & Built with  by Rohan Singh  2025</p>
+        </motion.div>
       </div>
     </section>
   );

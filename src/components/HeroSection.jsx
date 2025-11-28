@@ -1,102 +1,259 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import { Link } from "react-scroll";
 import profilePic from "../assets/Image.jpg";
 
-const techStacks = [
-  { name: "JavaScript", icon: "https://img.icons8.com/color/48/javascript.png" },
-  { name: "React", icon: "https://img.icons8.com/color/48/react-native.png" },
-  { name: "Node.js", icon: "https://img.icons8.com/color/48/nodejs.png" },
-  { name: "Tailwind", icon: "https://img.icons8.com/color/48/tailwindcss.png" },
-  { name: "Python", icon: "https://img.icons8.com/color/48/python.png" },
-];
-
 const HeroSection = () => {
+  const badges = [
+    { label: "Founder", detail: "The MindMates" },
+    { label: "GDGoC ''25", detail: "Web Dev Associate" },
+    { label: "Hackathon Finalist", detail: "TiE Kolkata" },
+  ];
+
   return (
-    <motion.div
+    <section
       id="home"
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 sm:px-12 py-10 bg-gradient-to-br from-[#0b1120] via-[#0f172a] to-[#0b1120] text-white relative pt-28 sm:pt-24 space-y-10 lg:space-y-0"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-20 relative overflow-hidden"
     >
-      {/* 👋 Left - Text */}
-      <div className="text-center lg:text-left lg:w-1/2 space-y-6">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
-            Hi, I'm Rohan Singh
-          </span>
-        </h1>
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-300">
-          Full Stack Web Developer · ML Enthusiast · Creative Builder.
-        </p>
-
-        {/* 🚀 Tech Stack Icons */}
-        <div className="grid grid-cols-5 gap-4 mt-6 place-items-center">
-          {techStacks.map((tech, index) => (
-            <motion.img
-              key={tech.name}
-              src={tech.icon}
-              alt={tech.name}
-              className="w-10 h-10 hover:scale-110 transition duration-300 drop-shadow-md"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.3,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* 🔗 Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition transform hover:scale-105 shadow-md"
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Main Paper Card - Hero Content */}
+          <motion.div
+            className="lg:col-span-8 relative"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            🚀 See My Projects
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 border border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white rounded-lg font-semibold text-lg transition transform hover:scale-105 shadow-md"
-          >
-            🤝 Let’s Connect
-          </a>
+            {/* Paper Card */}
+            <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] px-8 py-10 sm:p-12">
+              {/* Tape Effect - Top Left */}
+              <div className="absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-2deg]" />
+              
+              {/* Tape Effect - Top Right */}
+              <div className="absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
+
+              {/* Hand-drawn underline accent */}
+              <div className="absolute top-16 left-8 h-1 w-32 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
+
+              {/* Content */}
+              <div className="space-y-6">
+                {/* Name with handwritten font */}
+                <div>
+                  <motion.h1
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111827] font-handwritten mb-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    Rohan Singh
+                  </motion.h1>
+                  
+                  {/* Small doodle arrow */}
+                  <span className="absolute top-12 right-8 text-2xl rotate-[15deg] opacity-70">
+                    
+                  </span>
+                </div>
+
+                {/* Tagline */}
+                <motion.p
+                  className="text-lg sm:text-xl text-[#1F2933] font-medium leading-relaxed"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  I build <span className="text-[#F97316] font-semibold">AI</span>,{" "}
+                  <span className="text-[#3B82F6] font-semibold">Web</span> &{" "}
+                  <span className="text-[#22C55E] font-semibold">Community-driven</span> products.
+                </motion.p>
+
+                {/* Description */}
+                <motion.p
+                  className="text-base text-[#4B5563] leading-relaxed"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  Founder of <span className="font-semibold text-[#1F2933]">The MindMates</span>, 
+                  Web Dev Associate @ <span className="font-semibold text-[#1F2933]">GDGoC''25</span>, 
+                  and full-stack builder who loves turning ideas into reality.
+                </motion.p>
+
+                {/* Badges with hand-drawn circles */}
+                <motion.div
+                  className="flex flex-wrap gap-3 pt-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  {badges.map((badge, index) => (
+                    <motion.div
+                      key={index}
+                      className="relative px-4 py-2 bg-white border-2 border-[#E5D9C9] rounded-lg shadow-sm"
+                      whileHover={{ y: -3, rotate: -1 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      {/* Hand-drawn circle around badge */}
+                      <svg
+                        className="absolute -inset-1 w-full h-full opacity-40"
+                        viewBox="0 0 100 50"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <ellipse
+                          cx="50"
+                          cy="25"
+                          rx="48"
+                          ry="22"
+                          fill="none"
+                          stroke="#F97316"
+                          strokeWidth="1.5"
+                          strokeDasharray="3,2"
+                          transform="rotate(-2 50 25)"
+                        />
+                      </svg>
+                      <div className="relative z-10">
+                        <p className="text-xs text-[#4B5563] font-medium">{badge.label}</p>
+                        <p className="text-sm font-semibold text-[#1F2933]">{badge.detail}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* CTA Buttons */}
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4 pt-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <Link to="projects" smooth={true} duration={500}>
+                    <motion.button
+                      className="w-full sm:w-auto px-8 py-3 bg-[#F97316] text-white rounded-lg font-semibold shadow-md hover:shadow-xl transition-all duration-300"
+                      whileHover={{ y: -2, scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      View Projects 
+                    </motion.button>
+                  </Link>
+
+                  <motion.a
+                    href="/src/assets/resume.pdf"
+                    download
+                    className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-[#E5D9C9] text-[#1F2933] rounded-lg font-semibold hover:bg-[#FDF9F3] transition-all duration-300 flex items-center justify-center gap-2"
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FaDownload />
+                    Resume
+                  </motion.a>
+                </motion.div>
+
+                {/* Social Links */}
+                <motion.div
+                  className="flex gap-4 pt-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.9 }}
+                >
+                  <motion.a
+                    href="https://github.com/Rohansingh3001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white border-2 border-[#E5D9C9] rounded-lg hover:bg-[#FDF9F3] transition-all"
+                    whileHover={{ y: -2, rotate: -3 }}
+                  >
+                    <FaGithub className="text-xl text-[#1F2933]" />
+                  </motion.a>
+                  <motion.a
+                    href="https://www.linkedin.com/in/rohan-singh-033748243/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white border-2 border-[#E5D9C9] rounded-lg hover:bg-[#FDF9F3] transition-all"
+                    whileHover={{ y: -2, rotate: 3 }}
+                  >
+                    <FaLinkedin className="text-xl text-[#3B82F6]" />
+                  </motion.a>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Profile + Sticky Notes */}
+          <div className="lg:col-span-4 space-y-6">
+            {/* Profile Image Card */}
+            <motion.div
+              className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_12px_30px_rgba(15,23,42,0.25)] p-6"
+              initial={{ opacity: 0, y: 40, rotate: 2 }}
+              animate={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              whileHover={{ y: -6, rotate: -1 }}
+            >
+              {/* Pin effect */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#F97316] rounded-full shadow-md" />
+              
+              <img
+                src={profilePic}
+                alt="Rohan Singh"
+                className="w-full h-auto object-cover rounded-lg border-2 border-[#E5D9C9]"
+              />
+              
+              {/* Small handwritten note */}
+              <p className="mt-3 text-center text-sm font-handwritten text-[#4B5563]">
+                hey there! 
+              </p>
+            </motion.div>
+
+            {/* Sticky Note - Currently Working */}
+            <motion.div
+              className="relative bg-[#FEF3C7] border-2 border-[#FACC15]/60 rounded-lg shadow-lg px-5 py-4 rotate-[-2deg]"
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: -2 }}
+              transition={{ duration: 0.6, delay: 0.7, type: "spring" }}
+              whileHover={{ rotate: 0, scale: 1.05 }}
+            >
+              {/* Tape on sticky note */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 h-4 w-16 bg-[#E5E7EB]/90 rounded-sm shadow-sm" />
+              
+              <p className="text-xs font-handwritten font-bold text-[#78350F] mb-2">
+                Currently:
+              </p>
+              <ul className="text-xs font-medium text-[#78350F] space-y-1">
+                <li>– Building The MindMates </li>
+                <li>– GDGoC Web Dev Associate</li>
+                <li>– 10+ Hackathons participated</li>
+              </ul>
+              
+              {/* Small doodle */}
+              <div className="absolute bottom-2 right-2 text-lg opacity-50">
+                
+              </div>
+            </motion.div>
+
+            {/* Tech Stack Sticky Note */}
+            <motion.div
+              className="relative bg-[#DBEAFE] border-2 border-[#3B82F6]/40 rounded-lg shadow-lg px-5 py-4 rotate-[1deg]"
+              initial={{ opacity: 0, scale: 0.8, rotate: 3 }}
+              animate={{ opacity: 1, scale: 1, rotate: 1 }}
+              transition={{ duration: 0.6, delay: 0.9, type: "spring" }}
+              whileHover={{ rotate: -1, scale: 1.05 }}
+            >
+              <p className="text-xs font-handwritten font-bold text-[#1E3A8A] mb-2">
+                Tech Stack:
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {["React", "Firebase", "AI/ML", "Aptos", "Node.js"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-2 py-1 bg-white/70 border border-[#3B82F6]/30 rounded text-[#1E3A8A] font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
-
-      {/* 🧠 Right - Profile Image */}
-      <motion.div
-        className="hidden sm:flex lg:w-1/2 flex-col items-center relative"
-        initial={{ opacity: 0, scale: 0.9, y: 30 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        viewport={{ once: true }}
-      >
-        {/* 🔵 Blue Pulse Ring */}
-        <motion.div
-          className="absolute w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-blue-700 blur-3xl opacity-20 animate-pulse"
-        ></motion.div>
-
-        {/* 🖼️ Image */}
-        <img
-          src={profilePic}
-          alt="Rohan Singh"
-          className="w-48 sm:w-64 lg:w-72 h-48 sm:h-64 lg:h-72 rounded-full border-4 border-gray-300 shadow-xl z-10 object-cover"
-        />
-
-        {/* 💬 Open to Work */}
-        <motion.div
-          className="mt-6 text-center text-gray-300 px-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, delay: 1 }}
-        >
-          <p className="bg-[#1e293b] px-4 py-2 rounded-lg shadow-md">
-            💼 Open to Work — Let’s Build Together!
-          </p>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+    </section>
   );
 };
 

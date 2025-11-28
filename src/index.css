@@ -1,1 +1,93 @@
+/* Google Fonts - DM Sans (main) + Caveat (handwritten accent) */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Caveat:wght@400..700&display=swap');
+
 @import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 40%),
+      linear-gradient(to bottom, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Handwritten font class */
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* Paper lines effect */
+.paper-lines {
+  background-image: linear-gradient(to bottom, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Cursor - Hide default on desktop */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+  
+  a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Mobile improvements */
+@media (max-width: 640px) {
+  /* Reduce padding on mobile for better space usage */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal scroll on small screens */
+body {
+  overflow-x: hidden;
+}
+
+/* Better mobile viewport handling */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific fixes */
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Lazy Loading - Image fade in */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
