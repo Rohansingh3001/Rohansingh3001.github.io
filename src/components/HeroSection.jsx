@@ -27,9 +27,11 @@ const HeroSection = () => {
             {/* Mobile: ID Card Layout, Desktop: Paper Card */}
             <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] px-8 py-10 sm:p-12">
               {/* ID Card Header Strip (Mobile only) */}
-              <div className="block lg:hidden absolute top-0 left-0 right-0 h-16 bg-gradient-to-r from-[#3B82F6] via-[#F97316] to-[#22C55E] rounded-t-xl">
+              <div className="block lg:hidden absolute top-0 left-0 right-0 h-16 bg-[#F97316] rounded-t-xl">
                 <div className="absolute top-3 left-4 text-white font-bold text-sm">DEVELOPER ID</div>
                 <div className="absolute top-3 right-4 text-white font-bold text-xs">NIT'25</div>
+                {/* Lanyard Hole */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-[#E5D9C9] rounded-sm border border-[#D4C5B0]"></div>
               </div>
               
               {/* ID Card with Photo (Mobile) */}
