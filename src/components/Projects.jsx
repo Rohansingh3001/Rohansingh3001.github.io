@@ -141,17 +141,42 @@ const Projects = () => {
                 <div className="hidden sm:block absolute -top-2 right-24 w-8 h-12 border-2 border-[#9CA3AF] rounded-full rotate-12 opacity-70" />
                 <div className="hidden sm:block absolute -top-1 right-[102px] w-6 h-10 border-2 border-[#9CA3AF] rounded-full rotate-12 opacity-70" />
                 
-                {/* Year stamp */}
-                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-2.5 py-0.5 sm:px-3 sm:py-1 border-2 border-dashed rounded shadow-sm bg-white/80" style={{ borderColor: project.color }}>
-                  <span className="text-[11px] sm:text-xs font-bold text-[#4B5563]">{project.year}</span>
+                {/* Desktop Year stamp */}
+                <div className="hidden sm:block absolute top-6 right-6 px-3 py-1 border-2 border-dashed rounded shadow-sm bg-white/80" style={{ borderColor: project.color }}>
+                  <span className="text-xs font-bold text-[#4B5563]">{project.year}</span>
                 </div>
                 
-                {/* Handwritten note */}
-                <div className="absolute top-4 left-4 font-handwritten text-xs sm:text-sm opacity-50 rotate-[-3deg]" style={{ color: project.color }}>
+                {/* Desktop Handwritten note */}
+                <div className="hidden sm:block absolute top-4 left-4 font-handwritten text-sm opacity-50 rotate-[-3deg]" style={{ color: project.color }}>
                   ★ Featured
                 </div>
 
-                <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-start pt-6 sm:pt-4">
+                {/* Mobile Header: Title, Category & Year (shown on mobile before preview) */}
+                <div className="lg:hidden mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                    <span 
+                      className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border shadow-xs" 
+                      style={{ 
+                        borderColor: `${project.color}50`, 
+                        backgroundColor: `${project.color}15`, 
+                        color: project.color 
+                      }}
+                    >
+                      ★ {project.category || "Featured Project"}
+                    </span>
+                    <span className="text-[11px] font-bold text-[#4B5563] px-2.5 py-0.5 rounded-md bg-white border border-[#E5D9C9] shadow-xs">
+                      {project.year}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] font-handwritten leading-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-[#F97316] font-semibold mt-0.5">
+                    {project.role}
+                  </p>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-start sm:pt-4">
                   {/* Project Image & Browser Frame */}
                   <motion.div
                     className="lg:col-span-5"
@@ -215,9 +240,9 @@ const Projects = () => {
                         )}
                       </a>
 
-                      {/* Photo caption below image (Polaroid style - does not cover screenshot!) */}
+                      {/* Photo caption below image (Polaroid style) */}
                       <div className="pt-2 pb-0.5 px-2">
-                        <p className="text-xs font-handwritten text-[#4B5563] text-center truncate">
+                        <p className="text-xs font-handwritten text-[#4B5563] text-center truncate italic">
                           {project.tagline}
                         </p>
                       </div>
@@ -226,38 +251,44 @@ const Projects = () => {
 
                   {/* Project Details */}
                   <div className="lg:col-span-7 space-y-4">
-                    {/* Title & Role */}
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111827] mb-1 font-handwritten">
+                    {/* Desktop Title & Role (hidden on mobile since it's at top) */}
+                    <div className="hidden lg:block">
+                      <h3 className="text-3xl md:text-4xl font-bold text-[#111827] mb-1 font-handwritten">
                         {project.title}
                       </h3>
-                      <p className="text-sm sm:text-base md:text-lg italic text-[#4B5563] mb-1 sm:mb-2">{project.tagline}</p>
-                      <p className="text-xs sm:text-sm font-semibold text-[#F97316]">{project.role}</p>
+                      <p className="text-base md:text-lg italic text-[#4B5563] mb-1">{project.tagline}</p>
+                      <p className="text-sm font-semibold text-[#F97316]">{project.role}</p>
                     </div>
 
                     {/* Problem  Solution  Impact */}
-                    <div className="space-y-2.5 sm:space-y-3">
-                      <div className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 bg-[#FEF3C7]/30 border-l-4 border-[#FACC15] rounded">
-                        <FaLightbulb className="text-[#F97316] text-lg sm:text-xl mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="text-[11px] sm:text-xs font-semibold text-[#F97316] mb-0.5">Problem</p>
-                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">{project.problem}</p>
+                    <div className="space-y-2 sm:space-y-2.5">
+                      <div className="flex items-start gap-2.5 p-2.5 sm:p-3 bg-[#FEF3C7]/40 border-l-4 border-[#FACC15] rounded-r-lg">
+                        <div className="w-6 h-6 rounded-md bg-[#FACC15]/25 flex items-center justify-center flex-shrink-0 text-[#D97706] text-sm mt-0.5">
+                          <FaLightbulb />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[11px] font-bold text-[#B45309] uppercase tracking-wider">Problem</p>
+                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed mt-0.5">{project.problem}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 bg-[#DBEAFE]/30 border-l-4 border-[#3B82F6] rounded">
-                        <FaUsers className="text-[#3B82F6] text-lg sm:text-xl mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="text-[11px] sm:text-xs font-semibold text-[#3B82F6] mb-0.5">Solution</p>
-                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">{project.solution}</p>
+                      <div className="flex items-start gap-2.5 p-2.5 sm:p-3 bg-[#DBEAFE]/40 border-l-4 border-[#3B82F6] rounded-r-lg">
+                        <div className="w-6 h-6 rounded-md bg-[#3B82F6]/25 flex items-center justify-center flex-shrink-0 text-[#2563EB] text-sm mt-0.5">
+                          <FaUsers />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[11px] font-bold text-[#1D4ED8] uppercase tracking-wider">Solution</p>
+                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed mt-0.5">{project.solution}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 bg-[#D1FAE5]/30 border-l-4 border-[#22C55E] rounded">
-                        <FaTrophy className="text-[#22C55E] text-lg sm:text-xl mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="text-[11px] sm:text-xs font-semibold text-[#22C55E] mb-0.5">Impact</p>
-                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">{project.impact}</p>
+                      <div className="flex items-start gap-2.5 p-2.5 sm:p-3 bg-[#D1FAE5]/40 border-l-4 border-[#22C55E] rounded-r-lg">
+                        <div className="w-6 h-6 rounded-md bg-[#22C55E]/25 flex items-center justify-center flex-shrink-0 text-[#15803D] text-sm mt-0.5">
+                          <FaTrophy />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[11px] font-bold text-[#15803D] uppercase tracking-wider">Impact</p>
+                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed mt-0.5">{project.impact}</p>
                         </div>
                       </div>
                     </div>
@@ -267,7 +298,7 @@ const Projects = () => {
                       {project.tags.map((tag, i) => (
                         <motion.span
                           key={i}
-                          className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white border border-[#E5D9C9] rounded-full text-[11px] sm:text-xs text-[#4B5563] font-medium shadow-sm"
+                          className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white border border-[#E5D9C9] rounded-full text-[11px] sm:text-xs text-[#4B5563] font-medium shadow-xs"
                           whileHover={{ scale: 1.05, rotate: -2, borderColor: project.color }}
                           transition={{ duration: 0.2 }}
                         >
@@ -276,31 +307,31 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Links */}
-                    <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-2">
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white border-2 border-[#E5D9C9] rounded-lg font-semibold text-sm text-[#1F2933] hover:bg-[#FDF9F3] transition-all shadow-sm w-full sm:w-auto"
-                        whileHover={{ y: -3, rotate: -1, boxShadow: "0 8px 16px rgba(0,0,0,0.15)" }}
-                        whileTap={{ scale: 0.96 }}
-                      >
-                        <FaGithub />
-                        Code
-                      </motion.a>
-
+                    {/* Links: Side-by-Side on Mobile with Live Demo prioritized */}
+                    <div className="grid grid-cols-2 gap-2.5 sm:flex sm:flex-row pt-2">
                       <motion.a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white shadow-md transition-all w-full sm:w-auto"
+                        className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white shadow-md transition-all"
                         style={{ backgroundColor: project.color }}
-                        whileHover={{ y: -3, rotate: 1, boxShadow: "0 12px 24px rgba(0,0,0,0.25)" }}
-                        whileTap={{ scale: 0.96 }}
+                        whileHover={{ y: -2, scale: 1.02 }}
+                        whileTap={{ scale: 0.97 }}
                       >
-                        <FaExternalLinkAlt />
+                        <FaExternalLinkAlt className="text-xs" />
                         Live Demo
+                      </motion.a>
+
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white border-2 border-[#E5D9C9] rounded-xl font-bold text-xs sm:text-sm text-[#1F2933] hover:bg-[#FDF9F3] transition-all shadow-xs"
+                        whileHover={{ y: -2, scale: 1.02 }}
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        <FaGithub className="text-sm" />
+                        Code
                       </motion.a>
                     </div>
                   </div>
