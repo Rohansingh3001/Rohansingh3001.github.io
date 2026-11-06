@@ -96,23 +96,23 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-4 sm:mb-6 font-handwritten break-words">
             Featured Projects
           </h2>
           
           <div className="flex justify-center">
-            <div className="h-1 w-40 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
+            <div className="h-1 w-32 sm:w-40 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
           </div>
         </motion.div>
 
         {/* Project Cards */}
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -124,7 +124,7 @@ const Projects = () => {
             >
               {/* Paper Card */}
               <motion.div 
-                className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-8 sm:p-10 overflow-hidden transition-all duration-300"
+                className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-4 sm:p-6 md:p-10 overflow-hidden transition-all duration-300"
                 whileHover={{ y: -8, rotate: 0.5, boxShadow: "0 25px 50px rgba(15,23,42,0.45)" }}
               >
                 {/* Corner fold effect */}
@@ -134,24 +134,24 @@ const Projects = () => {
                 </div>
 
                 {/* Tape effect */}
-                <div className="absolute -top-3 left-20 h-6 w-24 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[2deg]" />
-                <div className="absolute -top-3 left-20 h-6 w-24 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                <div className="hidden sm:block absolute -top-3 left-20 h-6 w-24 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[2deg]" />
+                <div className="hidden sm:block absolute -top-3 left-20 h-6 w-24 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
                 
                 {/* Paper clip */}
-                <div className="absolute -top-2 right-24 w-8 h-12 border-2 border-[#9CA3AF] rounded-full rotate-12 opacity-70" />
-                <div className="absolute -top-1 right-[102px] w-6 h-10 border-2 border-[#9CA3AF] rounded-full rotate-12 opacity-70" />
+                <div className="hidden sm:block absolute -top-2 right-24 w-8 h-12 border-2 border-[#9CA3AF] rounded-full rotate-12 opacity-70" />
+                <div className="hidden sm:block absolute -top-1 right-[102px] w-6 h-10 border-2 border-[#9CA3AF] rounded-full rotate-12 opacity-70" />
                 
                 {/* Year stamp */}
-                <div className="absolute top-6 right-6 px-3 py-1 border-2 border-dashed rounded shadow-sm" style={{ borderColor: project.color }}>
-                  <span className="text-xs font-bold text-[#4B5563]">{project.year}</span>
+                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-2.5 py-0.5 sm:px-3 sm:py-1 border-2 border-dashed rounded shadow-sm bg-white/80" style={{ borderColor: project.color }}>
+                  <span className="text-[11px] sm:text-xs font-bold text-[#4B5563]">{project.year}</span>
                 </div>
                 
                 {/* Handwritten note */}
-                <div className="absolute top-4 left-4 font-handwritten text-sm opacity-40 rotate-[-3deg]" style={{ color: project.color }}>
+                <div className="absolute top-4 left-4 font-handwritten text-xs sm:text-sm opacity-50 rotate-[-3deg]" style={{ color: project.color }}>
                   ★ Featured
                 </div>
 
-                <div className="grid lg:grid-cols-5 gap-8 items-start">
+                <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 items-start pt-6 sm:pt-4">
                   {/* Project Image */}
                   <motion.div
                     className="lg:col-span-2"
@@ -165,11 +165,11 @@ const Projects = () => {
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-56 sm:h-64 object-cover object-top rounded border border-[#E5D9C9]/50"
+                            className="w-full h-44 sm:h-56 md:h-64 object-cover object-top rounded border border-[#E5D9C9]/50"
                           />
                         ) : (
                           <div 
-                            className="w-full h-56 rounded flex flex-col items-center justify-center p-6 text-center relative overflow-hidden"
+                            className="w-full h-44 sm:h-56 rounded flex flex-col items-center justify-center p-6 text-center relative overflow-hidden"
                             style={{ 
                               background: `linear-gradient(135deg, ${project.color}15 0%, ${project.color}35 100%)`,
                               border: `1.5px dashed ${project.color}60`
@@ -191,7 +191,7 @@ const Projects = () => {
                       </div>
                       {/* Photo caption */}
                       <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded border border-[#E5D9C9] shadow-sm">
-                        <p className="text-xs font-handwritten text-[#4B5563] text-center">{project.tagline}</p>
+                        <p className="text-xs font-handwritten text-[#4B5563] text-center truncate">{project.tagline}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -200,46 +200,46 @@ const Projects = () => {
                   <div className="lg:col-span-3 space-y-4">
                     {/* Title & Role */}
                     <div>
-                      <h3 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-1 font-handwritten">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111827] mb-1 font-handwritten">
                         {project.title}
                       </h3>
-                      <p className="text-lg italic text-[#4B5563] mb-2">{project.tagline}</p>
-                      <p className="text-sm font-semibold text-[#F97316]">{project.role}</p>
+                      <p className="text-sm sm:text-base md:text-lg italic text-[#4B5563] mb-1 sm:mb-2">{project.tagline}</p>
+                      <p className="text-xs sm:text-sm font-semibold text-[#F97316]">{project.role}</p>
                     </div>
 
                     {/* Problem  Solution  Impact */}
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3 p-3 bg-[#FEF3C7]/30 border-l-4 border-[#FACC15] rounded">
-                        <FaLightbulb className="text-[#F97316] text-xl mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2.5 sm:space-y-3">
+                      <div className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 bg-[#FEF3C7]/30 border-l-4 border-[#FACC15] rounded">
+                        <FaLightbulb className="text-[#F97316] text-lg sm:text-xl mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="text-xs font-semibold text-[#F97316] mb-1">Problem</p>
-                          <p className="text-sm text-[#4B5563] leading-relaxed">{project.problem}</p>
+                          <p className="text-[11px] sm:text-xs font-semibold text-[#F97316] mb-0.5">Problem</p>
+                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">{project.problem}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-3 bg-[#DBEAFE]/30 border-l-4 border-[#3B82F6] rounded">
-                        <FaUsers className="text-[#3B82F6] text-xl mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 bg-[#DBEAFE]/30 border-l-4 border-[#3B82F6] rounded">
+                        <FaUsers className="text-[#3B82F6] text-lg sm:text-xl mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="text-xs font-semibold text-[#3B82F6] mb-1">Solution</p>
-                          <p className="text-sm text-[#4B5563] leading-relaxed">{project.solution}</p>
+                          <p className="text-[11px] sm:text-xs font-semibold text-[#3B82F6] mb-0.5">Solution</p>
+                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">{project.solution}</p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-3 bg-[#D1FAE5]/30 border-l-4 border-[#22C55E] rounded">
-                        <FaTrophy className="text-[#22C55E] text-xl mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 bg-[#D1FAE5]/30 border-l-4 border-[#22C55E] rounded">
+                        <FaTrophy className="text-[#22C55E] text-lg sm:text-xl mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="text-xs font-semibold text-[#22C55E] mb-1">Impact</p>
-                          <p className="text-sm text-[#4B5563] leading-relaxed">{project.impact}</p>
+                          <p className="text-[11px] sm:text-xs font-semibold text-[#22C55E] mb-0.5">Impact</p>
+                          <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">{project.impact}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {project.tags.map((tag, i) => (
                         <motion.span
                           key={i}
-                          className="px-3 py-1 bg-white border border-[#E5D9C9] rounded-full text-xs text-[#4B5563] font-medium shadow-sm"
+                          className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white border border-[#E5D9C9] rounded-full text-[11px] sm:text-xs text-[#4B5563] font-medium shadow-sm"
                           whileHover={{ scale: 1.05, rotate: -2, borderColor: project.color }}
                           transition={{ duration: 0.2 }}
                         >
@@ -249,12 +249,12 @@ const Projects = () => {
                     </div>
 
                     {/* Links */}
-                    <div className="flex gap-3 pt-2">
+                    <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-2">
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-[#E5D9C9] rounded-lg font-semibold text-sm text-[#1F2933] hover:bg-[#FDF9F3] transition-all shadow-sm"
+                        className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white border-2 border-[#E5D9C9] rounded-lg font-semibold text-sm text-[#1F2933] hover:bg-[#FDF9F3] transition-all shadow-sm w-full sm:w-auto"
                         whileHover={{ y: -3, rotate: -1, boxShadow: "0 8px 16px rgba(0,0,0,0.15)" }}
                         whileTap={{ scale: 0.96 }}
                       >
@@ -266,7 +266,7 @@ const Projects = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white shadow-md transition-all"
+                        className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white shadow-md transition-all w-full sm:w-auto"
                         style={{ backgroundColor: project.color }}
                         whileHover={{ y: -3, rotate: 1, boxShadow: "0 12px 24px rgba(0,0,0,0.25)" }}
                         whileTap={{ scale: 0.96 }}

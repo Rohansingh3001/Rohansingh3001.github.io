@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-20 pt-32 md:pt-20 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-3 sm:px-6 lg:px-12 py-16 pt-24 sm:pt-28 md:pt-20 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto relative z-10 w-full">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -26,29 +26,29 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Mobile: ID Card Layout, Desktop: Paper Card */}
-            <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] px-8 py-10 sm:p-12">
+            <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] px-4 pt-16 pb-8 sm:px-8 sm:py-10 md:p-12 overflow-hidden">
               {/* ID Card Header Strip (Mobile only) */}
-              <div className="block lg:hidden absolute top-0 left-0 right-0 h-16 bg-[#F97316] rounded-t-xl">
-                <div className="absolute top-3 left-4 text-white font-bold text-sm">DEVELOPER ID</div>
+              <div className="block lg:hidden absolute top-0 left-0 right-0 h-14 bg-[#F97316] rounded-t-xl overflow-hidden">
+                <div className="absolute top-3 left-4 text-white font-bold text-xs sm:text-sm tracking-wider">DEVELOPER ID</div>
                 <div className="absolute top-3 right-4 text-white font-bold text-xs">NiT'27</div>
                 {/* Lanyard Hole */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-[#E5D9C9] rounded-sm border border-[#D4C5B0]"></div>
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-2.5 bg-[#E5D9C9] rounded-sm border border-[#D4C5B0]"></div>
               </div>
 
               {/* ID Card with Photo (Mobile) */}
-              <div className="block lg:hidden mt-8 mb-6">
-                <div className="flex items-start gap-4">
+              <div className="block lg:hidden mt-2 mb-6">
+                <div className="flex items-center gap-3.5 sm:gap-4">
                   {/* Profile Photo */}
                   <img
                     src={profilePic}
                     alt="Rohan Singh"
-                    className="w-24 h-24 object-cover rounded-lg border-4 border-white shadow-lg"
+                    className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-lg border-2 sm:border-4 border-white shadow-lg flex-shrink-0"
                   />
                   {/* Info */}
-                  <div className="flex-1 space-y-1 pt-1">
+                  <div className="flex-1 min-w-0 space-y-1">
                     <div className="text-xs text-[#6B7280]">ID: RS-2027</div>
-                    <h1 className="text-2xl font-bold text-[#111827] font-handwritten leading-tight">Rohan Singh</h1>
-                    <p className="text-sm text-[#F97316] font-semibold">Full Stack Developer</p>
+                    <h1 className="text-xl sm:text-2xl font-bold text-[#111827] font-handwritten leading-tight truncate">Rohan Singh</h1>
+                    <p className="text-xs sm:text-sm text-[#F97316] font-semibold">Full Stack Developer</p>
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@ const HeroSection = () => {
               <div className="hidden lg:block absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
 
               {/* Hand-drawn underline accent */}
-              <div className="absolute top-16 left-8 h-1 w-32 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
+              <div className="hidden sm:block absolute top-16 left-8 h-1 w-32 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
 
               {/* Content */}
               <div className="space-y-6">
@@ -81,22 +81,22 @@ const HeroSection = () => {
                 </div>
 
                 {/* ID Card Info Section (Mobile) */}
-                <div className="block lg:hidden space-y-3 pb-4 border-b-2 border-dashed border-[#E5D9C9]">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">College:</span>
-                    <span className="font-semibold text-[#111827]">NiT'27 (CSE AIML)</span>
+                <div className="block lg:hidden space-y-2.5 pb-4 border-b-2 border-dashed border-[#E5D9C9] text-xs sm:text-sm">
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-[#6B7280] flex-shrink-0">College:</span>
+                    <span className="font-semibold text-[#111827] text-right truncate">NiT'27 (CSE AIML)</span>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">Founder:</span>
-                    <span className="font-semibold text-[#111827]">The MindMates</span>
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-[#6B7280] flex-shrink-0">Founder:</span>
+                    <span className="font-semibold text-[#111827] text-right truncate">The MindMates</span>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">Ex-Intern:</span>
-                    <span className="font-semibold text-[#111827]">Fortune Minds India LLP</span>
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-[#6B7280] flex-shrink-0">Ex-Intern:</span>
+                    <span className="font-semibold text-[#111827] text-right truncate">Fortune Minds India</span>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">Ex-Associate:</span>
-                    <span className="font-semibold text-[#111827]">GDGoC NiT</span>
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="text-[#6B7280] flex-shrink-0">Ex-Associate:</span>
+                    <span className="font-semibold text-[#111827] text-right truncate">GDGoC NiT</span>
                   </div>
                 </div>
 

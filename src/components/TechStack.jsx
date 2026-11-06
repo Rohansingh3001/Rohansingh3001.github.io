@@ -67,23 +67,23 @@ const TechStack = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-4 sm:mb-6 font-handwritten break-words">
             Tech Stack
           </h2>
           
           <div className="flex justify-center">
-            <div className="h-1 w-32 bg-[#8B5CF6]/60 rounded-full blur-[0.5px]" />
+            <div className="h-1 w-28 sm:w-32 bg-[#8B5CF6]/60 rounded-full blur-[0.5px]" />
           </div>
         </motion.div>
 
         {/* Categories Grid */}
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {techStackCategories.map((category, catIndex) => (
             <motion.div
               key={category.category}
@@ -93,12 +93,12 @@ const TechStack = () => {
               transition={{ duration: 0.6, delay: catIndex * 0.2 }}
             >
               {/* Category Paper Card */}
-              <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-8">
+              <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-4 sm:p-6 md:p-8 overflow-hidden">
                 {/* Tape effect */}
-                <div className="absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-2deg]" />
+                <div className="hidden sm:block absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-2deg]" />
                 
                 {/* Category Header with hand-drawn line */}
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-2.5 sm:gap-4 mb-6 sm:mb-8">
                   <motion.div
                     className="h-1 flex-1 rounded-full"
                     style={{ backgroundColor: category.color, opacity: 0.4 }}
@@ -108,7 +108,7 @@ const TechStack = () => {
                     transition={{ duration: 0.8, delay: catIndex * 0.2 }}
                   />
                   <h3 
-                    className="text-2xl sm:text-3xl font-bold whitespace-nowrap"
+                    className="text-lg sm:text-2xl md:text-3xl font-bold text-center"
                     style={{ color: category.color, fontFamily: 'DM Sans, sans-serif' }}
                   >
                     {category.category}
@@ -124,11 +124,11 @@ const TechStack = () => {
                 </div>
 
                 {/* Technologies Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-4">
                   {category.technologies.map((tech, index) => (
                     <motion.div
                       key={tech.name}
-                      className="relative bg-white border-2 border-[#E5D9C9] rounded-lg p-4 flex flex-col items-center gap-3 shadow-sm"
+                      className="relative bg-white border-2 border-[#E5D9C9] rounded-lg p-2.5 sm:p-4 flex flex-col items-center gap-2 sm:gap-3 shadow-sm"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}

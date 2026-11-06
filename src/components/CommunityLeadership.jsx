@@ -45,23 +45,23 @@ const CommunityLeadership = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-4 sm:mb-6 font-handwritten break-words">
             Community Leadership
           </h2>
           
           <div className="flex justify-center">
-            <div className="h-1 w-40 bg-[#22C55E]/60 rounded-full blur-[0.5px]" />
+            <div className="h-1 w-32 sm:w-40 bg-[#22C55E]/60 rounded-full blur-[0.5px]" />
           </div>
         </motion.div>
 
         {/* Leadership Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {leadership.map((item, index) => (
             <motion.div
               key={index}
@@ -73,7 +73,7 @@ const CommunityLeadership = () => {
             >
               {/* Paper Card */}
               <motion.div
-                className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-8 h-full"
+                className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-5 sm:p-8 h-full overflow-hidden"
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -85,7 +85,7 @@ const CommunityLeadership = () => {
                 
                 {/* Icon with colored background */}
                 <motion.div
-                  className="inline-flex p-4 rounded-xl text-white text-4xl mb-6 shadow-md"
+                  className="inline-flex p-3 sm:p-4 rounded-xl text-white text-2xl sm:text-4xl mb-4 sm:mb-6 shadow-md"
                   style={{ backgroundColor: item.color }}
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
@@ -94,22 +94,22 @@ const CommunityLeadership = () => {
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-[#111827] mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#111827] mb-1 sm:mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm font-semibold mb-4" style={{ color: item.color }}>
+                <p className="text-xs sm:text-sm font-semibold mb-3 sm:mb-4" style={{ color: item.color }}>
                   {item.organization}
                 </p>
-                <p className="text-[#4B5563] leading-relaxed mb-6 text-sm">
+                <p className="text-[#4B5563] leading-relaxed mb-4 sm:mb-6 text-xs sm:text-sm">
                   {item.description}
                 </p>
 
                 {/* Stats Badges */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {item.stats.map((stat, i) => (
                     <motion.span
                       key={i}
-                      className="px-3 py-1 bg-white border-2 border-[#E5D9C9] rounded-full text-xs font-medium"
+                      className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white border-2 border-[#E5D9C9] rounded-full text-[11px] sm:text-xs font-medium"
                       style={{ color: item.color }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}

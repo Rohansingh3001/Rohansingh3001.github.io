@@ -53,38 +53,38 @@ const Journey = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-6 font-handwritten">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-4 sm:mb-6 font-handwritten break-words">
             My Journey
           </h2>
           
           <div className="flex justify-center">
-            <div className="h-1 w-32 bg-[#3B82F6]/60 rounded-full blur-[0.5px] rotate-[1deg]" />
+            <div className="h-1 w-28 sm:w-32 bg-[#3B82F6]/60 rounded-full blur-[0.5px] rotate-[1deg]" />
           </div>
         </motion.div>
 
         {/* Lined Paper Card with Timeline */}
         <motion.div
-          className="relative paper-lines bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-8 sm:p-12"
+          className="relative paper-lines bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-4 sm:p-8 md:p-12 overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Tape effects on corners */}
-          <div className="absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-3deg]" />
-          <div className="absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
+          <div className="hidden sm:block absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-3deg]" />
+          <div className="hidden sm:block absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
           
           {/* Red margin line (like notebook paper) */}
-          <div className="absolute left-16 top-0 bottom-0 w-0.5 bg-[#EF4444]/30" />
+          <div className="absolute left-6 sm:left-12 md:left-16 top-0 bottom-0 w-0.5 bg-[#EF4444]/30" />
 
           {/* Timeline Items */}
-          <div className="space-y-12 ml-8">
+          <div className="space-y-8 sm:space-y-12 ml-3 sm:ml-8 md:ml-10">
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
@@ -94,35 +94,35 @@ const Journey = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="flex items-start gap-6">
+                <div className="flex items-start gap-3.5 sm:gap-6">
                   {/* Year Badge with icon */}
                   <motion.div
-                    className="flex-shrink-0 w-20 h-20 rounded-xl border-2 border-[#E5D9C9] bg-white shadow-md flex flex-col items-center justify-center"
+                    className="flex-shrink-0 w-14 h-14 sm:w-20 sm:h-20 rounded-xl border-2 border-[#E5D9C9] bg-white shadow-md flex flex-col items-center justify-center"
                     style={{ borderColor: item.color }}
-                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    whileHover={{ scale: 1.08, rotate: -4 }}
                   >
-                    <div className="text-2xl mb-1" style={{ color: item.color }}>
+                    <div className="text-lg sm:text-2xl mb-0.5 sm:mb-1" style={{ color: item.color }}>
                       {item.icon}
                     </div>
-                    <div className="text-xs font-bold text-[#111827]">{item.year}</div>
+                    <div className="text-[10px] sm:text-xs font-bold text-[#111827]">{item.year}</div>
                   </motion.div>
 
                   {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#111827] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-xl md:text-2xl font-bold text-[#111827] mb-1 sm:mb-2 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-[#4B5563] leading-relaxed mb-3">
+                    <p className="text-xs sm:text-sm md:text-base text-[#4B5563] leading-relaxed mb-2.5 sm:mb-3">
                       {item.description}
                     </p>
                     
                     {/* Achievements as sticky note tags */}
                     {item.achievements && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {item.achievements.map((achievement, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-[#FEF3C7] border border-[#FACC15]/60 rounded text-xs text-[#78350F] font-medium"
+                            className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[#FEF3C7] border border-[#FACC15]/60 rounded text-[10px] sm:text-xs text-[#78350F] font-medium"
                           >
                             {achievement}
                           </span>
