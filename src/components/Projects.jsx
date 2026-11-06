@@ -11,7 +11,10 @@ import {
   FaHeart, 
   FaRocket 
 } from "react-icons/fa";
-import mindmatesimage from "../assets/TheMindMates.png";
+import mindmatesimage from "../assets/TheMindMates.jpg";
+import mindcareerimage from "../assets/MindCareer.jpg";
+import proviumimage from "../assets/Provium.png";
+import sahchariimage from "../assets/Sahchari.jpg";
 
 const projects = [
   {
@@ -38,6 +41,7 @@ const projects = [
     problem: "Conventional education channels students into streams based solely on marks rather than cognitive traits and psychological archetypes.",
     solution: "Built a 10-archetype Career DNA assessment engine, real-time adaptive AI mock interviews (with Groq Whisper speech-to-text & camera posture detection), and roadmaps for 40+ modern careers.",
     impact: "Empowers Indian students to discover tailored career paths with real market salary insights and tailored 3-month action plans.",
+    image: mindcareerimage,
     year: "2026",
     role: "Founder & Full-Stack Architect",
     github: "https://github.com/Rohansingh3001/mindCareer",
@@ -54,6 +58,7 @@ const projects = [
     problem: "DeFi protocols lack cryptographically verifiable proof of solvency without exposing sensitive individual collateral balances publicly.",
     solution: "Developed an autonomous multi-agent pipeline generating Noir zero-knowledge proofs (UltraHonk) verifying lending solvency on Base Sepolia, paired with an on-chain audit portal.",
     impact: "Provides verifiable proof of solvency inspired by the US GENIUS Act 1:1 reserve transparency goals.",
+    image: proviumimage,
     year: "2026",
     role: "ZK & Full-Stack Developer",
     github: "https://github.com/Rohansingh3001/Provium",
@@ -70,6 +75,7 @@ const projects = [
     problem: "Women in India lack localized, holistic wellness tools that adapt to their real lifestyles, professions, and natural cycle intelligence.",
     solution: "Built a culturally attuned menstrual health web app with phase-mapped lifestyle guidance across 9 professions, Groq/Qwen 2.5 AI health chat, and automated Web Push reminders.",
     impact: "Culturally attuned reproductive and cycle intelligence helping women plan work, nutrition, and wellness.",
+    image: sahchariimage,
     year: "2026",
     role: "Lead Developer",
     github: "https://github.com/Rohansingh3001/Sahchari",
@@ -159,7 +165,7 @@ const Projects = () => {
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-56 object-cover rounded"
+                            className="w-full h-56 sm:h-64 object-cover object-top rounded border border-[#E5D9C9]/50"
                           />
                         ) : (
                           <div 
