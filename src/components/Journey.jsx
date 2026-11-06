@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaLightbulb, FaRocket, FaTrophy, FaCode } from "react-icons/fa";
 
 const Journey = () => {
@@ -6,32 +6,42 @@ const Journey = () => {
     {
       year: "2023",
       title: "The Beginning",
-      description: "Started my web development journey. Built my first projects and fell in love with coding.",
+      description: "Started my CSE (AIML) journey at Narula Institute of Technology (NiT). Built my first web projects and discovered a true passion for software engineering.",
       icon: <FaLightbulb />,
       color: "#3B82F6",
+      achievements: ["Enrolled NiT'27 CSE (AIML)", "First Web Apps"],
     },
     {
       year: "2024",
-      title: "Building & Shipping",
-      description: "Participated in 10+ hackathons, built Web3Buddy,and Project Kisan. Won multiple prizes and gained invaluable experience.",
+      title: "Building & Hackathons",
+      description: "Participated in 10+ hackathons, built Web3Buddy and Project Kisan (Agrosaathi). Mastered rapid prototyping and full-stack engineering under pressure.",
       icon: <FaRocket />,
       color: "#F97316",
-      achievements: ["10+ Hackathons"],
+      achievements: ["10+ Hackathons", "Web3 & AI Prototypes"],
     },
     {
       year: "2025",
-      title: "Leadership & Founding",
-      description: "Became TiE Kolkata Finalist and Web Dev Associate at GDGoC NIT''25. Founded The MindMates—a mental wellness platform for students. Mentored 50+ developers.",
+      title: "Founding & Leadership",
+      description: "Founded The MindMates, became a TiE Kolkata Finalist (won ₹10k grant), and served as Web Dev Associate at GDGoC NiT mentoring 400+ students.",
       icon: <FaTrophy />,
       color: "#22C55E",
-      achievements: ["TiE Kolkata Finalist", "Founded MindMates", "GDGoC Associate"],
+      achievements: ["TiE Kolkata Finalist", "Founded The MindMates", "GDGoC NiT Associate"],
+    },
+    {
+      year: "2026",
+      title: "Industry Internship & Ecosystem Scale",
+      description: "Completed 7-month Software Development Internship at Fortune Minds India LLP (Feb–Sep 2026). Scaled The MindMates ecosystem with MindCareer and Sahchari, and built Provium (Autonomous ZK Compliance on Base Sepolia).",
+      icon: <FaCode />,
+      color: "#8B5CF6",
+      achievements: ["Internship @ Fortune Minds", "Built MindCareer & Sahchari", "Provium ZK DeFi"],
     },
     {
       year: "Now",
       title: "Building the Future",
-      description: "Continuing to build, learn, and lead. Focused on AI/ML, Web3, and creating products that make a difference.",
-      icon: <FaCode />,
-      color: "#8B5CF6",
+      description: "Advancing into production distributed systems, ZK proofs, and agentic AI. Graduating with B.Tech CSE (AIML) from NiT in 2027.",
+      icon: <FaRocket />,
+      color: "#EC4899",
+      achievements: ["NiT'27 B.Tech AIML", "Ecosystem Expansion"],
     },
   ];
 

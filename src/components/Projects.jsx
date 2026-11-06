@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaTrophy, FaUsers, FaLightbulb } from "react-icons/fa";
 import mindmatesimage from "../assets/TheMindMates.png";
 import web3buddyimage from "../assets/web3buddy.png";
@@ -8,40 +8,75 @@ const projects = [
   {
     id: 1,
     title: "The MindMates",
-    tagline: "Mental Wellness Platform for Students",
-    problem: "Students face mental health challenges but lack accessible, peer-driven support systems.",
-    solution: "Built an AI-powered platform connecting students with peer supporters, offering anonymous chat, mood tracking, and wellness resources.",
-    impact: "Finalist at TiE Kolkata, won ₹10k prize. Helping students find community and support.",
+    tagline: "AI Mental Wellness Platform for Students",
+    problem: "Students experience high academic anxiety and mental health challenges without accessible, anonymous, or peer-driven support systems.",
+    solution: "Architected an AI-powered platform featuring 24/7 empathetic conversational companion, mood tracking, guided wellness rituals, and peer connections.",
+    impact: "Finalist at TiE Kolkata 2025 (won ₹10,000 prize grant). Helping students find community and mental wellness.",
     image: mindmatesimage,
-    year: "2025",
+    year: "2025 - Present",
     role: "Founder & Lead Developer",
     github: "https://github.com/Rohansingh3001/The-Mindmate",
     link: "https://themindmate2025.vercel.app/",
-    tags: ["React", "Firebase", "AI/ML", "Mental Health"],
+    tags: ["React", "Firebase", "AI/ML", "Python", "Mental Health"],
     color: "#F97316",
+    emoji: "🧠",
+    category: "Mental Health",
   },
   {
     id: 2,
-    title: "Web3Buddy",
-    tagline: "AI Onboarding for Web3 Beginners",
-    problem: "Web3 has a steep learning curve that intimidates newcomers.",
-    solution: "Created an interactive AI companion that guides users through Web3 concepts with quests, challenges, and NFT badges.",
-    impact: "Simplifies blockchain education with gamified learning paths.",
-    image: web3buddyimage,
-    year: "2025",
-    role: "Full-Stack Developer",
-    github: "https://github.com/Rohansingh3001/Web3Buddy",
-    link: "https://web3-buddy-chi.vercel.app/",
-    tags: ["Web3", "AI", "NFT", "Aptos"],
+    title: "MindCareer",
+    tagline: "AI Career Intelligence Platform for Students",
+    problem: "Conventional education channels students into streams based solely on marks rather than cognitive traits and psychological archetypes.",
+    solution: "Built a 10-archetype Career DNA assessment engine, real-time adaptive AI mock interviews (with Groq Whisper speech-to-text & camera posture detection), and roadmaps for 40+ modern careers.",
+    impact: "Empowers Indian students to discover tailored career paths with real market salary insights and tailored 3-month action plans.",
+    year: "2026",
+    role: "Founder & Full-Stack Architect",
+    github: "https://github.com/Rohansingh3001/mindCareer",
+    link: "https://mindcareer.themindmates.in",
+    tags: ["React 19", "PostgreSQL", "Node.js", "Groq LLaMA 3.3", "Whisper STT"],
     color: "#3B82F6",
+    emoji: "🎯",
+    category: "EdTech AI",
   },
   {
     id: 3,
+    title: "Provium",
+    tagline: "Autonomous ZK Compliance for DeFi Lending",
+    problem: "DeFi protocols lack cryptographically verifiable proof of solvency without exposing sensitive individual collateral balances publicly.",
+    solution: "Developed an autonomous multi-agent pipeline generating Noir zero-knowledge proofs (UltraHonk) verifying lending solvency on Base Sepolia, paired with an on-chain audit portal.",
+    impact: "Provides verifiable proof of solvency inspired by the US GENIUS Act 1:1 reserve transparency goals.",
+    year: "2026",
+    role: "ZK & Full-Stack Developer",
+    github: "https://github.com/Rohansingh3001/Provium",
+    link: "https://github.com/Rohansingh3001/Provium",
+    tags: ["Noir ZK", "Solidity", "Base Sepolia", "AI Agents", "Next.js"],
+    color: "#8B5CF6",
+    emoji: "🛡️",
+    category: "ZK & DeFi",
+  },
+  {
+    id: 4,
+    title: "Sahchari",
+    tagline: "Intelligent Cycle & Life Planning Companion",
+    problem: "Women in India lack localized, holistic wellness tools that adapt to their real lifestyles, professions, and natural cycle intelligence.",
+    solution: "Built a culturally attuned menstrual health web app with phase-mapped lifestyle guidance across 9 professions, Groq/Qwen 2.5 AI health chat, and automated Web Push reminders.",
+    impact: "Culturally attuned reproductive and cycle intelligence helping women plan work, nutrition, and wellness.",
+    year: "2026",
+    role: "Lead Developer",
+    github: "https://github.com/Rohansingh3001/Sahchari",
+    link: "https://sahchari.themindmates.in",
+    tags: ["React 19", "TypeScript", "Firebase", "Web Push", "Groq AI"],
+    color: "#EC4899",
+    emoji: "🌸",
+    category: "FemTech",
+  },
+  {
+    id: 5,
     title: "Agrosaathi (Project Kisan)",
     tagline: "AI-Powered Farming Assistant",
-    problem: "Farmers lack access to timely crop information and government schemes.",
-    solution: "Developed an AI assistant with crop disease detection (OCR), real-time market rates, and personalized government scheme recommendations.",
-    impact: "Empowering farmers with technology to make informed decisions.",
+    problem: "Farmers lack access to timely crop information, disease identification, and personalized government schemes.",
+    solution: "Developed an AI assistant with crop disease detection (OCR/vision), real-time market rates, and personalized government scheme recommendations.",
+    impact: "Empowering farmers with accessible smartphone technology to make informed agricultural decisions.",
     image: agrosaathiimage,
     year: "2025",
     role: "Full-Stack & ML Developer",
@@ -49,6 +84,25 @@ const projects = [
     link: "https://agrosaathi2025.vercel.app/",
     tags: ["AI/ML", "Computer Vision", "React", "Python"],
     color: "#22C55E",
+    emoji: "🌾",
+    category: "AgriTech",
+  },
+  {
+    id: 6,
+    title: "Web3Buddy",
+    tagline: "AI Onboarding for Web3 Beginners",
+    problem: "Web3 has a steep learning curve and confusing terminology that intimidates newcomers.",
+    solution: "Created an interactive AI companion that guides users through Web3 concepts with quests, challenges, and NFT completion badges on Aptos.",
+    impact: "Simplifies blockchain education with gamified learning paths and interactive challenges.",
+    image: web3buddyimage,
+    year: "2025",
+    role: "Full-Stack Developer",
+    github: "https://github.com/Rohansingh3001/Web3Buddy",
+    link: "https://web3-buddy-chi.vercel.app/",
+    tags: ["Web3", "AI", "NFT", "Aptos"],
+    color: "#06B6D4",
+    emoji: "🌐",
+    category: "Web3",
   },
 ];
 
@@ -126,11 +180,33 @@ const Projects = () => {
                     <div className="relative rounded-lg overflow-hidden border-2 border-[#E5D9C9] shadow-md bg-white">
                       {/* Polaroid-style frame */}
                       <div className="p-2 bg-white">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-auto object-cover rounded"
-                        />
+                        {project.image ? (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-56 object-cover rounded"
+                          />
+                        ) : (
+                          <div 
+                            className="w-full h-56 rounded flex flex-col items-center justify-center p-6 text-center relative overflow-hidden"
+                            style={{ 
+                              background: `linear-gradient(135deg, ${project.color}15 0%, ${project.color}35 100%)`,
+                              border: `1.5px dashed ${project.color}60`
+                            }}
+                          >
+                            <div 
+                              className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-3 shadow-md bg-white border border-[#E5D9C9]"
+                              style={{ color: project.color }}
+                            >
+                              {project.emoji || "🚀"}
+                            </div>
+                            <h4 className="font-bold text-xl text-[#111827] font-handwritten">{project.title}</h4>
+                            <p className="text-xs text-[#4B5563] mt-1 font-medium">{project.tagline}</p>
+                            <div className="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-white/85 border border-[#E5D9C9]" style={{ color: project.color }}>
+                              {project.category || "Project"}
+                            </div>
+                          </div>
+                        )}
                       </div>
                       {/* Photo caption */}
                       <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded border border-[#E5D9C9] shadow-sm">

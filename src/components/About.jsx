@@ -1,12 +1,12 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaRocket, FaCode, FaBrain, FaUsers } from "react-icons/fa";
 
 const About = () => {
   const stats = [
-    { number: "20+", label: "Projects Shipped", icon: <FaCode /> },
+    { number: "25+", label: "Projects Shipped", icon: <FaCode /> },
     { number: "10+", label: "Hackathons", icon: <FaRocket /> },
-    { number: "1", label: "Startup Founded", icon: <FaBrain /> },
-    { number: "GDGoC", label: "Web Dev Associate", icon: <FaUsers /> },
+    { number: "Ex-Intern", label: "Fortune Minds", icon: <FaBrain /> },
+    { number: "NiT'27", label: "B.Tech CSE (AIML)", icon: <FaUsers /> },
   ];
 
   const skills = [
@@ -63,17 +63,19 @@ const About = () => {
             
             <div className="text-[#4B5563] text-base sm:text-lg leading-relaxed space-y-4">
               <p>
-                Hey, I''m <span className="text-[#1F2933] font-semibold">Rohan Singh</span>—a builder at heart. I don''t just write code; I ship products that solve real problems.
+                Hey, I'm <span className="text-[#1F2933] font-semibold">Rohan Singh</span>—a full-stack builder and B.Tech CSE (AIML) student at <span className="text-[#1F2933] font-semibold">Narula Institute of Technology (NiT'27)</span>.
               </p>
               <p>
-                Whether it''s founding{" "}
-                <span className="text-[#F97316] font-semibold">The MindMates</span> to help students with mental wellness, building{" "}
-                <span className="text-[#3B82F6] font-semibold">Web3Buddy</span> platform, creating{" "}
-                <span className="text-[#8B5CF6] font-semibold">AI-powered tools</span> that actually work—I thrive on turning ideas into reality.
+                Whether it's founding{" "}
+                <span className="text-[#F97316] font-semibold">The MindMates</span> ecosystem (including{" "}
+                <span className="text-[#3B82F6] font-semibold">MindCareer</span> and{" "}
+                <span className="text-[#EC4899] font-semibold">Sahchari</span>), engineering{" "}
+                <span className="text-[#8B5CF6] font-semibold">Provium</span> (Autonomous ZK compliance for DeFi), or delivering production features during my 7-month internship at{" "}
+                <span className="text-[#1F2933] font-semibold">Fortune Minds India LLP</span>—I thrive on solving hard problems with code.
               </p>
               <p>
-                I believe in learning by doing, failing fast, and iterating faster. That''s why I''ve participated in 10+ hackathons, built 20+ projects, and now serve as{" "}
-                <span className="text-[#1F2933] font-semibold">Web Dev Associate at GDGoC NIT''25</span>.
+                I believe in learning by doing, failing fast, and iterating faster. That's why I've competed in 10+ hackathons, built 25+ projects, and served as{" "}
+                <span className="text-[#1F2933] font-semibold">Ex-Web Dev Associate at GDGoC NiT</span>.
               </p>
               
               {/* Highlighted motto with doodle */}

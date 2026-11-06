@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { Link } from "react-scroll";
 import profilePic from "../assets/Image.jpg";
@@ -6,7 +6,8 @@ import profilePic from "../assets/Image.jpg";
 const HeroSection = () => {
   const badges = [
     { label: "Founder", detail: "The MindMates" },
-    { label: "GDGoC ''25", detail: "Web Dev Associate" },
+    { label: "Ex-Intern", detail: "Fortune Minds India LLP" },
+    { label: "Ex-GDGoC", detail: "Web Dev Associate" },
     { label: "Hackathon Finalist", detail: "TiE Kolkata" },
   ];
 
@@ -29,7 +30,7 @@ const HeroSection = () => {
               {/* ID Card Header Strip (Mobile only) */}
               <div className="block lg:hidden absolute top-0 left-0 right-0 h-16 bg-[#F97316] rounded-t-xl">
                 <div className="absolute top-3 left-4 text-white font-bold text-sm">DEVELOPER ID</div>
-                <div className="absolute top-3 right-4 text-white font-bold text-xs">NIT'25</div>
+                <div className="absolute top-3 right-4 text-white font-bold text-xs">NiT'27</div>
                 {/* Lanyard Hole */}
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-[#E5D9C9] rounded-sm border border-[#D4C5B0]"></div>
               </div>
@@ -45,7 +46,7 @@ const HeroSection = () => {
                   />
                   {/* Info */}
                   <div className="flex-1 space-y-1 pt-1">
-                    <div className="text-xs text-[#6B7280]">ID: RS-2025</div>
+                    <div className="text-xs text-[#6B7280]">ID: RS-2027</div>
                     <h1 className="text-2xl font-bold text-[#111827] font-handwritten leading-tight">Rohan Singh</h1>
                     <p className="text-sm text-[#F97316] font-semibold">Full Stack Developer</p>
                   </div>
@@ -82,16 +83,20 @@ const HeroSection = () => {
                 {/* ID Card Info Section (Mobile) */}
                 <div className="block lg:hidden space-y-3 pb-4 border-b-2 border-dashed border-[#E5D9C9]">
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">Organization:</span>
-                    <span className="font-semibold text-[#111827]">GDGoC NIT'25</span>
+                    <span className="text-[#6B7280]">College:</span>
+                    <span className="font-semibold text-[#111827]">NiT'27 (CSE AIML)</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">Role:</span>
-                    <span className="font-semibold text-[#111827]">Web Dev Associate</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-[#6B7280]">Founded:</span>
+                    <span className="text-[#6B7280]">Founder:</span>
                     <span className="font-semibold text-[#111827]">The MindMates</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-[#6B7280]">Ex-Intern:</span>
+                    <span className="font-semibold text-[#111827]">Fortune Minds India LLP</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-[#6B7280]">Ex-Associate:</span>
+                    <span className="font-semibold text-[#111827]">GDGoC NiT</span>
                   </div>
                 </div>
 
@@ -115,8 +120,9 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
                   Founder of <span className="font-semibold text-[#1F2933]">The MindMates</span>, 
-                  Web Dev Associate @ <span className="font-semibold text-[#1F2933]">GDGoC''25</span>, 
-                  and full-stack builder who loves turning ideas into reality.
+                  Ex-Intern @ <span className="font-semibold text-[#1F2933]">Fortune Minds India LLP</span>, 
+                  Ex-Associate @ <span className="font-semibold text-[#1F2933]">GDGoC NiT</span>, 
+                  and full-stack builder studying CSE (AIML) at <span className="font-semibold text-[#1F2933]">NiT'27</span>.
                 </motion.p>
 
                 {/* Badges with hand-drawn circles - Desktop only */}
@@ -256,11 +262,13 @@ const HeroSection = () => {
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 h-4 w-16 bg-[#E5E7EB]/90 rounded-sm shadow-sm" />
               
               <p className="text-xs font-handwritten font-bold text-[#78350F] mb-2">
-                Currently:
+                Currently & Highlights:
               </p>
               <ul className="text-xs font-medium text-[#78350F] space-y-1">
-                <li>– Building The MindMates </li>
-                <li>– GDGoC Web Dev Associate</li>
+                <li>– Founder @ The MindMates (Avrosa)</li>
+                <li>– Ex-Intern @ Fortune Minds India LLP</li>
+                <li>– Ex-GDGoC Web Dev Associate</li>
+                <li>– CSE (AIML) @ NiT'27</li>
                 <li>– 10+ Hackathons participated</li>
               </ul>
               

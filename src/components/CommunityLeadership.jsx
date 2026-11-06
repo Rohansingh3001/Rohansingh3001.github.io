@@ -1,12 +1,12 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaUsers, FaTrophy, FaMicrophone, FaHandshake } from "react-icons/fa";
 
 const CommunityLeadership = () => {
   const leadership = [
     {
-      title: "GDGoC Web Dev Associate",
-      organization: "Google Developer Groups on Campus NIT''25",
-      description: "Leading web development initiatives, organizing workshops, and mentoring 400+ students in modern web technologies.",
+      title: "Ex-Web Dev Associate @ GDGoC",
+      organization: "Google Developer Groups on Campus NiT",
+      description: "Led web development initiatives, organized workshops, and mentored 400+ students in modern web technologies.",
       icon: <FaUsers />,
       color: "#3B82F6",
       stats: ["400+ Students", "Multiple Workshops", "Community Building"],

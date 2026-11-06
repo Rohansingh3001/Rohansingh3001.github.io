@@ -1,61 +1,61 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
     id: 1,
-    role: "Web Dev Associate",
-    company: "GDG on Campus NIT",
-    period: "2025 - Present",
-    description: "Leading web development initiatives and organizing tech sessions for 400+ students",
+    role: "Software Development Intern",
+    company: "Fortune Minds India LLP",
+    period: "Feb 2, 2026 – Sep 17, 2026",
+    description: "Completed a 7-month engineering internship developing scalable web applications and high-performance production features.",
     achievements: [
-      "Conducted 10+ tech workshops",
-      "Mentored 400+ students in web development",
-      "Built community web platform",
-      "Organized Google Developer events"
+      "Engineered full-stack features using modern web frameworks and RESTful APIs",
+      "Optimized frontend rendering, responsive designs, and component architectures",
+      "Collaborated in agile sprints with engineering teams to ship client deliverables",
+      "Enhanced system reliability through comprehensive testing and bug resolution"
     ],
-    icon: "",
+    icon: "💼",
   },
   {
     id: 2,
-    role: "Open Source Mentor",
-    company: "GSSoC (GirlScript Summer of Code)",
-    period: "2025",
-    description: "Mentoring contributors in open source projects and code reviews",
+    role: "Founder & Lead Developer",
+    company: "The MindMates ",
+    period: "2025 – Present",
+    description: "Architecting and scaling AI-driven student wellness and lifestyle platforms including The MindMates, MindCareer, and Sahchari.",
     achievements: [
-      "Mentored 50+ contributors",
-      "Reviewed 100+ pull requests",
-      "Guided project architecture",
-      "Facilitated community growth"
+      "TiE Kolkata 2025 Finalist (won ₹10,000 prize grant)",
+      "Built AI companion workflows with Python, Firebase, and Groq LLaMA models",
+      "Architected multi-product ecosystem with modern React 19 and scalable databases",
+      "Led cross-functional teams across product design, development, and community outreach"
     ],
-    icon: "",
+    icon: "🚀",
   },
   {
     id: 3,
-    role: "Hackathon Enthusiast",
-    company: "Multiple Platforms",
-    period: "2023 - Present",
-    description: "Participated in numerous hackathons and built innovative solutions",
+    role: "Ex-Web Dev Associate",
+    company: "GDG on Campus NiT (Google Developer Groups)",
+    period: "2024 – 2025",
+    description: "Led web development tracks and organized hands-on workshops for 400+ students at Narula Institute of Technology.",
     achievements: [
-      "15+ hackathon participations",
-      "Built AI/ML solutions",
-      "Developed cross-platform applications",
-      "Collaborated with diverse teams"
+      "Conducted 10+ hands-on workshops on modern web technologies and React",
+      "Mentored 400+ college peers in full-stack development",
+      "Built community web platforms and facilitated developer bootcamps",
+      "Coordinated hackathons and official Google Developer ecosystem events"
     ],
-    icon: "",
+    icon: "🌐",
   },
   {
     id: 4,
-    role: "Community Builder",
-    company: "Tech Communities",
-    period: "2025 - Present",
-    description: "Building and nurturing tech communities, conducting sessions for large audiences",
+    role: "Open Source Mentor & Hackathon Builder",
+    company: "GSSoC & Tech Communities",
+    period: "2023 – Present",
+    description: "Mentoring contributors in open source and competing in hackathons building AI, Web3, and ZK solutions.",
     achievements: [
-      "Reached 400+ students",
-      "Organized tech meetups",
-      "Speaker at multiple events",
-      "Built developer networks"
+      "Mentored 50+ developers and reviewed 100+ pull requests in GSSoC",
+      "Built Provium (Autonomous ZK Compliance) and Agrosaathi (Project Kisan)",
+      "Competed in 10+ hackathons with multiple podium finishes",
+      "Facilitated developer growth through tech talks and community sessions"
     ],
-    icon: "",
+    icon: "⚡",
   }
 ];
 
@@ -80,7 +80,7 @@ const Experience = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Experience
           </h2>
-          
+
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Building communities, mentoring developers, and creating impact through technology
           </p>
@@ -126,8 +126,8 @@ const Experience = () => {
                       className="flex items-center space-x-3"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ 
-                        duration: 0.5, 
+                      transition={{
+                        duration: 0.5,
                         delay: index * 0.2 + achIndex * 0.1 + 0.3,
                         type: "spring",
                         stiffness: 100
