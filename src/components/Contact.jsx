@@ -33,7 +33,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}>
-          <p className="text-[#FDF9F3] mb-4 sm:mb-6 font-handwritten text-base sm:text-lg">or connect with me on</p>
+          <p className="text-[#4B5563] mb-4 sm:mb-6 font-handwritten text-base sm:text-lg">or connect with me on</p>
           <div className="flex justify-center items-center gap-3 sm:gap-4 flex-wrap mb-8 sm:mb-12">
             {socialLinks.map((social, index) => (
               <motion.a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="p-3 sm:p-4 bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-md transition-all" style={{ color: social.color }} initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + index * 0.1 }} whileHover={{ y: -5, rotate: index % 2 === 0 ? -3 : 3, scale: 1.15 }} whileTap={{ scale: 0.95 }}>
@@ -43,8 +43,8 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        <motion.div className="pt-6 sm:pt-8 border-t-2 border-[#FDF9F3]/20" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.8 }}>
-          <p className="text-[#FDF9F3]/60 text-xs sm:text-sm font-handwritten">Designed & Built with ❤️ by Rohan Singh • 2026</p>
+        <motion.div className="pt-6 sm:pt-8 border-t-2 border-[#E5D9C9]/60" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.8 }}>
+          <p className="text-[#6B7280] text-xs sm:text-sm font-handwritten">Designed & Built with ❤️ by Rohan Singh • 2026</p>
         </motion.div>
       </div>
     </section>

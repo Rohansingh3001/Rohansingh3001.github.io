@@ -166,13 +166,13 @@ const TechStack = () => {
 
         {/* Bottom note */}
         <motion.div
-          className="mt-12 text-center"
+          className="mt-8 sm:mt-12 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <p className="text-[#FDF9F3]/60 text-sm font-handwritten">
+          <p className="text-[#6B7280] text-sm font-handwritten">
              Tech I work with daily – frontend, backend, AI/ML & blockchain!
           </p>
         </motion.div>

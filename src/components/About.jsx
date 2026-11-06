@@ -120,8 +120,8 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h3 className="text-2xl font-handwritten text-[#FDF9F3] text-center mb-6 sm:mb-8">
-             What I Do
+          <h3 className="text-2xl sm:text-3xl font-handwritten font-bold text-[#1F2937] text-center mb-6 sm:mb-8">
+            What I Do
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -170,8 +170,8 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <h3 className="text-2xl font-handwritten text-[#FDF9F3] text-center mb-6 sm:mb-8">
-             Quick Stats
+          <h3 className="text-2xl sm:text-3xl font-handwritten font-bold text-[#1F2937] text-center mb-6 sm:mb-8">
+            Quick Stats
           </h3>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
