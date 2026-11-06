@@ -183,7 +183,7 @@ const HeroSection = () => {
                   </Link>
 
                   <motion.a
-                    href="/src/assets/Rohan_Resume%20(3).pdf"
+                    href="/rohan_sde.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-8 py-3 bg-white border-2 border-[#E5D9C9] text-[#1F2933] rounded-lg font-semibold hover:bg-[#FDF9F3] transition-all duration-300 flex items-center justify-center gap-2"
@@ -212,7 +212,7 @@ const HeroSection = () => {
                     <FaGithub className="text-xl text-[#1F2933]" />
                   </motion.a>
                   <motion.a
-                    href="https://www.linkedin.com/in/rohan-singh-033748243/"
+                    href="https://www.linkedin.com/in/rohan-singh3001"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-white border-2 border-[#E5D9C9] rounded-lg hover:bg-[#FDF9F3] transition-all"
@@ -267,6 +267,7 @@ const HeroSection = () => {
               <ul className="text-xs font-medium text-[#78350F] space-y-1">
                 <li>– Founder @ The MindMates (Avrosa)</li>
                 <li>– Ex-Intern @ Fortune Minds India LLP</li>
+                <li>– SAP Certified (ABAP Cloud)</li>
                 <li>– Ex-GDGoC Web Dev Associate</li>
                 <li>– CSE (AIML) @ NiT'27</li>
                 <li>– 10+ Hackathons participated</li>
@@ -290,7 +291,7 @@ const HeroSection = () => {
                 Tech Stack:
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {["React", "Firebase", "AI/ML", "Aptos", "Node.js"].map((tech) => (
+                {["React.js", "Python", "Node.js", "PostgreSQL", "Docker", "LLMs", "C++"].map((tech) => (
                   <span
                     key={tech}
                     className="text-xs px-2 py-1 bg-white/70 border border-[#3B82F6]/30 rounded text-[#1E3A8A] font-medium"

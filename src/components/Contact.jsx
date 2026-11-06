@@ -1,13 +1,13 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 
 const Contact = () => {
   const socialLinks = [
     { href: "https://www.instagram.com/rohan_30.01/", icon: <FaInstagram />, label: "Instagram", color: "#F97316" },
-    { href: "https://www.linkedin.com/in/rohan-singh-033748243/", icon: <FaLinkedin />, label: "LinkedIn", color: "#3B82F6" },
+    { href: "https://www.linkedin.com/in/rohan-singh3001", icon: <FaLinkedin />, label: "LinkedIn", color: "#3B82F6" },
     { href: "https://github.com/Rohansingh3001", icon: <FaGithub />, label: "GitHub", color: "#111827" },
-    { href: "https://x.com/Rohan30_01", icon: <SiX />, label: "X", color: "#4B5563" },
+    { href: "https://x.com/Rohan3001", icon: <SiX />, label: "X", color: "#4B5563" },
     { href: "mailto:rsingh300103@gmail.com", icon: <FaEnvelope />, label: "Email", color: "#22C55E" },
   ];
 

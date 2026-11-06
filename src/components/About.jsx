@@ -10,10 +10,10 @@ const About = () => {
   ];
 
   const skills = [
-    { title: "AI/ML Solutions", description: "Building intelligent apps with Gemini API, OCR, and NLP workflows.", emoji: "" },
-    { title: "Full-Stack Development", description: "Crafting scalable web apps with React, Node.js, Firebase, and MongoDB.", emoji: "" },
-    { title: "Rapid Prototyping", description: "Turning ideas into working MVPs quickly—ideal for hackathons.", emoji: "" },
-    { title: "Community Leadership", description: "Leading tech initiatives, mentoring developers, organizing meetups.", emoji: "" },
+    { title: "Full-Stack & Microservices", description: "Building scalable web apps and RESTful APIs with React.js, Node.js, Express, Python, and Firebase.", emoji: "💻" },
+    { title: "AI / ML & Autonomous Agents", description: "Designing intelligent agent workflows with LLMs, Groq, Agno framework, and ML models.", emoji: "🤖" },
+    { title: "Core CS & Systems", description: "Solid foundations in Data Structures & Algorithms (DSA), OOP, DBMS, and Computer Networks.", emoji: "📐" },
+    { title: "DevOps, Cloud & SAP", description: "Hands-on with Docker, CI/CD, Git, SDLC, and SAP Certified Back-End Developer in ABAP Cloud.", emoji: "⚡" },
   ];
 
   return (

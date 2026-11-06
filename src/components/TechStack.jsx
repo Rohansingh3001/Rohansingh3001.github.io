@@ -1,45 +1,59 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const techStackCategories = [
+  {
+    category: "Languages & Core CS",
+    color: "#2563EB",
+    technologies: [
+      { name: "C / C++", icon: "https://img.icons8.com/color/96/c-plus-plus-logo.png" },
+      { name: "Python", icon: "https://img.icons8.com/color/96/python.png" },
+      { name: "JavaScript", icon: "https://img.icons8.com/color/96/javascript.png" },
+      { name: "SQL", icon: "https://img.icons8.com/color/96/sql.png" },
+      { name: "DSA & OOP", icon: "https://img.icons8.com/color/96/code.png" },
+    ],
+  },
   {
     category: "Frontend",
     color: "#3B82F6",
     technologies: [
-      { name: "React", icon: "https://img.icons8.com/color/96/react-native.png" },
+      { name: "React.js", icon: "https://img.icons8.com/color/96/react-native.png" },
+      { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+      { name: "Tailwind CSS", icon: "https://img.icons8.com/color/96/tailwind_css.png" },
       { name: "Vite", icon: "https://vitejs.dev/logo.svg" },
-      { name: "Tailwind", icon: "https://img.icons8.com/color/96/tailwind_css.png" },
       { name: "Framer Motion", icon: "https://cdn.worldvectorlogo.com/logos/framer-motion.svg" },
-      { name: "ShadCN/UI", icon: "https://avatars.githubusercontent.com/u/139895814?s=200&v=4" },
     ],
   },
   {
-    category: "Backend",
+    category: "Backend & Databases",
     color: "#F97316",
     technologies: [
       { name: "Node.js", icon: "https://img.icons8.com/color/96/nodejs.png" },
-      { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-      { name: "Python", icon: "https://img.icons8.com/color/96/python.png" },
-      { name: "Firebase", icon: "https://img.icons8.com/color/96/firebase.png" },
+      { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { name: "PostgreSQL", icon: "https://img.icons8.com/color/96/postgreesql.png" },
       { name: "MongoDB", icon: "https://img.icons8.com/color/96/mongodb.png" },
+      { name: "Firebase", icon: "https://img.icons8.com/color/96/firebase.png" },
     ],
   },
   {
-    category: "AI/ML",
+    category: "AI / ML & Agents",
     color: "#8B5CF6",
     technologies: [
+      { name: "LLMs & Groq", icon: "https://img.icons8.com/color/96/artificial-intelligence.png" },
+      { name: "AI Agents (Agno)", icon: "https://img.icons8.com/color/96/bot.png" },
+      { name: "Machine Learning", icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
       { name: "Gemini API", icon: "https://img.icons8.com/color/96/google-logo.png" },
-      { name: "NumPy", icon: "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" },
-      { name: "Pandas", icon: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" },
-      { name: "scikit-learn", icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+      { name: "NumPy & Pandas", icon: "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" },
     ],
   },
   {
-    category: "Blockchain",
-    color: "#22C55E",
+    category: "Tools & Certifications",
+    color: "#10B981",
     technologies: [
-      { name: "Aptos Move", icon: "https://cryptologos.cc/logos/aptos-apt-logo.png" },
-      { name: "Ethereum", icon: "https://img.icons8.com/color/96/ethereum.png" },
-      { name: "Web3.js", icon: "https://img.icons8.com/color/96/ethereum.png" },
+      { name: "Docker", icon: "https://img.icons8.com/color/96/docker.png" },
+      { name: "Git & GitHub", icon: "https://img.icons8.com/color/96/git.png" },
+      { name: "CI / CD", icon: "https://img.icons8.com/color/96/cloud.png" },
+      { name: "Postman", icon: "https://img.icons8.com/color/96/postman.png" },
+      { name: "SAP (ABAP Cloud)", icon: "https://img.icons8.com/color/96/sap.png" },
     ],
   },
 ];
