@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "rohan3001.vercel.app"
+        }
+      ],
+      "destination": "https://rohan3001.me/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "rohansingh3001.vercel.app"
+        }
+      ],
+      "destination": "https://rohan3001.me/$1",
+      "permanent": true
+    }
+  ]
+}
