@@ -14,7 +14,7 @@ const Journey = () => {
     {
       year: "2024",
       title: "Building & Hackathons",
-      description: "Participated in 10+ hackathons, built Web3Buddy and Project Kisan (Agrosaathi). Mastered rapid prototyping and full-stack engineering under pressure.",
+      description: "Participated in 10+ hackathons, building AI and full-stack solutions while mastering rapid engineering under pressure.",
       icon: <FaRocket />,
       color: "#F97316",
       achievements: ["10+ Hackathons", "Web3 & AI Prototypes"],

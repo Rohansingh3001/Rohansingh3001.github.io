@@ -18,7 +18,7 @@ const experiences = [
   {
     id: 2,
     role: "Founder & Lead Developer",
-    company: "The MindMates ",
+    company: "The MindMates (Avrosa Technologies)",
     period: "2025 – Present",
     description: "Architecting and scaling AI-driven student wellness and lifestyle platforms including The MindMates, MindCareer, and Sahchari.",
     achievements: [
@@ -51,7 +51,7 @@ const experiences = [
     description: "Mentoring contributors in open source and competing in hackathons building AI, Web3, and ZK solutions.",
     achievements: [
       "Mentored 50+ developers and reviewed 100+ pull requests in GSSoC",
-      "Built Provium (Autonomous ZK Compliance) and Agrosaathi (Project Kisan)",
+      "Built Provium (Autonomous ZK Compliance) and The MindMates ecosystem",
       "Competed in 10+ hackathons with multiple podium finishes",
       "Facilitated developer growth through tech talks and community sessions"
     ],
@@ -155,7 +155,7 @@ const Experience = () => {
             { number: "400+", label: "Students Reached", icon: "" },
             { number: "10+", label: "Hackathons", icon: "" },
             { number: "100+", label: "PRs Reviewed", icon: "" },
-            { number: "100+", label: "Mentees", icon: "" },
+            { number: "50+", label: "Mentees", icon: "" },
           ].map((stat, index) => (
             <motion.div
               key={index}

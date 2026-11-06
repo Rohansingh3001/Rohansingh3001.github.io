@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaTrophy, FaUsers, FaLightbulb } from "react-icons/fa";
 import mindmatesimage from "../assets/TheMindMates.png";
-import web3buddyimage from "../assets/web3buddy.png";
-import agrosaathiimage from "../assets/agrosaathi.png";
 
 const projects = [
   {
@@ -69,40 +67,6 @@ const projects = [
     color: "#EC4899",
     emoji: "🌸",
     category: "FemTech",
-  },
-  {
-    id: 5,
-    title: "Agrosaathi (Project Kisan)",
-    tagline: "AI-Powered Farming Assistant",
-    problem: "Farmers lack access to timely crop information, disease identification, and personalized government schemes.",
-    solution: "Developed an AI assistant with crop disease detection (OCR/vision), real-time market rates, and personalized government scheme recommendations.",
-    impact: "Empowering farmers with accessible smartphone technology to make informed agricultural decisions.",
-    image: agrosaathiimage,
-    year: "2025",
-    role: "Full-Stack & ML Developer",
-    github: "https://github.com/Rohansingh3001/project-kisan",
-    link: "https://agrosaathi2025.vercel.app/",
-    tags: ["AI/ML", "Computer Vision", "React", "Python"],
-    color: "#22C55E",
-    emoji: "🌾",
-    category: "AgriTech",
-  },
-  {
-    id: 6,
-    title: "Web3Buddy",
-    tagline: "AI Onboarding for Web3 Beginners",
-    problem: "Web3 has a steep learning curve and confusing terminology that intimidates newcomers.",
-    solution: "Created an interactive AI companion that guides users through Web3 concepts with quests, challenges, and NFT completion badges on Aptos.",
-    impact: "Simplifies blockchain education with gamified learning paths and interactive challenges.",
-    image: web3buddyimage,
-    year: "2025",
-    role: "Full-Stack Developer",
-    github: "https://github.com/Rohansingh3001/Web3Buddy",
-    link: "https://web3-buddy-chi.vercel.app/",
-    tags: ["Web3", "AI", "NFT", "Aptos"],
-    color: "#06B6D4",
-    emoji: "🌐",
-    category: "Web3",
   },
 ];
 
