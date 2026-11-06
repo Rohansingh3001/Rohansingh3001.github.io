@@ -1,0 +1,6 @@
+# Robots.txt for https://rohan3001.me
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://rohan3001.me/sitemap.xml
