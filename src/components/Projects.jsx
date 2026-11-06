@@ -151,25 +151,53 @@ const Projects = () => {
                   ★ Featured
                 </div>
 
-                <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 items-start pt-6 sm:pt-4">
-                  {/* Project Image */}
+                <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-start pt-6 sm:pt-4">
+                  {/* Project Image & Browser Frame */}
                   <motion.div
-                    className="lg:col-span-2"
-                    whileHover={{ scale: 1.03, rotate: -1 }}
+                    className="lg:col-span-5"
+                    whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="relative rounded-lg overflow-hidden border-2 border-[#E5D9C9] shadow-md bg-white">
-                      {/* Polaroid-style frame */}
-                      <div className="p-2 bg-white">
+                    <div className="relative rounded-xl overflow-hidden border-2 border-[#E5D9C9] shadow-md bg-white p-2 sm:p-2.5">
+                      {/* Browser Window Header */}
+                      <div className="flex items-center justify-between px-2.5 py-1.5 bg-[#F5EFE6] rounded-t-lg border-b border-[#E5D9C9] mb-1.5">
+                        {/* Traffic light window dots */}
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444] inline-block shadow-xs" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B] inline-block shadow-xs" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] inline-block shadow-xs" />
+                        </div>
+                        {/* Mock URL pill */}
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-mono text-[#6B7280] hover:text-[#F97316] truncate max-w-[170px] sm:max-w-[220px] transition-colors flex items-center gap-1"
+                          title={`Open ${project.title}`}
+                        >
+                          <span className="truncate">
+                            {project.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                          </span>
+                        </a>
+                        <span className="w-2.5 h-2.5" />
+                      </div>
+
+                      {/* Full Screenshot Preview with ZERO edge cropping */}
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block overflow-hidden rounded-lg border border-[#E5D9C9]/70 bg-[#FAF7F2] group/img relative"
+                      >
                         {project.image ? (
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-44 sm:h-56 md:h-64 object-cover object-top rounded border border-[#E5D9C9]/50"
+                            className="w-full h-auto block object-contain transition-transform duration-300 group-hover/img:scale-[1.02]"
                           />
                         ) : (
                           <div 
-                            className="w-full h-44 sm:h-56 rounded flex flex-col items-center justify-center p-6 text-center relative overflow-hidden"
+                            className="w-full aspect-[2/1] rounded flex flex-col items-center justify-center p-6 text-center relative overflow-hidden"
                             style={{ 
                               background: `linear-gradient(135deg, ${project.color}15 0%, ${project.color}35 100%)`,
                               border: `1.5px dashed ${project.color}60`
@@ -183,21 +211,21 @@ const Projects = () => {
                             </div>
                             <h4 className="font-bold text-xl text-[#111827] font-handwritten">{project.title}</h4>
                             <p className="text-xs text-[#4B5563] mt-1 font-medium">{project.tagline}</p>
-                            <div className="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-white/85 border border-[#E5D9C9]" style={{ color: project.color }}>
-                              {project.category || "Project"}
-                            </div>
                           </div>
                         )}
-                      </div>
-                      {/* Photo caption */}
-                      <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded border border-[#E5D9C9] shadow-sm">
-                        <p className="text-xs font-handwritten text-[#4B5563] text-center truncate">{project.tagline}</p>
+                      </a>
+
+                      {/* Photo caption below image (Polaroid style - does not cover screenshot!) */}
+                      <div className="pt-2 pb-0.5 px-2">
+                        <p className="text-xs font-handwritten text-[#4B5563] text-center truncate">
+                          {project.tagline}
+                        </p>
                       </div>
                     </div>
                   </motion.div>
 
                   {/* Project Details */}
-                  <div className="lg:col-span-3 space-y-4">
+                  <div className="lg:col-span-7 space-y-4">
                     {/* Title & Role */}
                     <div>
                       <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111827] mb-1 font-handwritten">
