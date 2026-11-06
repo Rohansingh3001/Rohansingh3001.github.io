@@ -34,7 +34,7 @@ const HeroSection = () => {
                 {/* Lanyard Hole */}
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-[#E5D9C9] rounded-sm border border-[#D4C5B0]"></div>
               </div>
-              
+
               {/* ID Card with Photo (Mobile) */}
               <div className="block lg:hidden mt-8 mb-6">
                 <div className="flex items-start gap-4">
@@ -52,10 +52,10 @@ const HeroSection = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Tape Effect - Desktop only */}
               <div className="hidden lg:block absolute -top-3 left-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[-2deg]" />
-              
+
               <div className="hidden lg:block absolute -top-3 right-12 h-6 w-20 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[3deg]" />
 
               {/* Hand-drawn underline accent */}
@@ -73,13 +73,13 @@ const HeroSection = () => {
                   >
                     Rohan Singh
                   </motion.h1>
-                  
+
                   {/* Small doodle arrow */}
                   <span className="absolute top-12 right-8 text-2xl rotate-[15deg] opacity-70">
-                    
+
                   </span>
                 </div>
-                
+
                 {/* ID Card Info Section (Mobile) */}
                 <div className="block lg:hidden space-y-3 pb-4 border-b-2 border-dashed border-[#E5D9C9]">
                   <div className="flex justify-between text-sm">
@@ -119,9 +119,9 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  Founder of <span className="font-semibold text-[#1F2933]">The MindMates</span>, 
-                  Ex-Intern @ <span className="font-semibold text-[#1F2933]">Fortune Minds India LLP</span>, 
-                  Ex-Associate @ <span className="font-semibold text-[#1F2933]">GDGoC NiT</span>, 
+                  Founder of <span className="font-semibold text-[#1F2933]">The MindMates</span>,
+                  Ex-Intern @ <span className="font-semibold text-[#1F2933]">Fortune Minds India LLP</span>,
+                  Ex-Associate @ <span className="font-semibold text-[#1F2933]">GDGoC NiT</span>,
                   and full-stack builder studying CSE (AIML) at <span className="font-semibold text-[#1F2933]">NiT'27</span>.
                 </motion.p>
 
@@ -178,7 +178,7 @@ const HeroSection = () => {
                       whileHover={{ y: -2, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      View Projects 
+                      View Projects
                     </motion.button>
                   </Link>
 
@@ -237,16 +237,16 @@ const HeroSection = () => {
             >
               {/* Pin effect */}
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#F97316] rounded-full shadow-md" />
-              
+
               <img
                 src={profilePic}
                 alt="Rohan Singh"
                 className="w-full h-auto object-cover rounded-lg border-2 border-[#E5D9C9]"
               />
-              
+
               {/* Small handwritten note */}
               <p className="mt-3 text-center text-sm font-handwritten text-[#4B5563]">
-                hey there! 
+                hey there!
               </p>
             </motion.div>
 
@@ -260,22 +260,22 @@ const HeroSection = () => {
             >
               {/* Tape on sticky note */}
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 h-4 w-16 bg-[#E5E7EB]/90 rounded-sm shadow-sm" />
-              
+
               <p className="text-xs font-handwritten font-bold text-[#78350F] mb-2">
                 Currently & Highlights:
               </p>
               <ul className="text-xs font-medium text-[#78350F] space-y-1">
-                <li>– Founder @ The MindMates (Avrosa)</li>
+                <li>– Founder @ The MindMates </li>
                 <li>– Ex-Intern @ Fortune Minds India LLP</li>
                 <li>– SAP Certified (ABAP Cloud)</li>
                 <li>– Ex-GDGoC Web Dev Associate</li>
                 <li>– CSE (AIML) @ NiT'27</li>
                 <li>– 10+ Hackathons participated</li>
               </ul>
-              
+
               {/* Small doodle */}
               <div className="absolute bottom-2 right-2 text-lg opacity-50">
-                
+
               </div>
             </motion.div>
 

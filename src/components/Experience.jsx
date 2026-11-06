@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaBriefcase, FaRocket, FaGlobe, FaBolt } from "react-icons/fa";
 
 const experiences = [
   {
@@ -13,7 +14,7 @@ const experiences = [
       "Collaborated in agile sprints with engineering teams to ship client deliverables",
       "Enhanced system reliability through comprehensive testing and bug resolution"
     ],
-    icon: "💼",
+    icon: <FaBriefcase />,
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ const experiences = [
       "Architected multi-product ecosystem with modern React 19 and scalable databases",
       "Led cross-functional teams across product design, development, and community outreach"
     ],
-    icon: "🚀",
+    icon: <FaRocket />,
   },
   {
     id: 3,
@@ -41,7 +42,7 @@ const experiences = [
       "Built community web platforms and facilitated developer bootcamps",
       "Coordinated hackathons and official Google Developer ecosystem events"
     ],
-    icon: "🌐",
+    icon: <FaGlobe />,
   },
   {
     id: 4,
@@ -55,7 +56,7 @@ const experiences = [
       "Competed in 10+ hackathons with multiple podium finishes",
       "Facilitated developer growth through tech talks and community sessions"
     ],
-    icon: "⚡",
+    icon: <FaBolt />,
   }
 ];
 
@@ -104,7 +105,9 @@ const Experience = () => {
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
-                  <span className="text-4xl">{exp.icon}</span>
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-950/70 border border-indigo-700/60 flex items-center justify-center text-2xl text-indigo-300 shadow-inner flex-shrink-0">
+                    {exp.icon}
+                  </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>
                     <p className="text-indigo-400 font-semibold text-lg">{exp.company}</p>

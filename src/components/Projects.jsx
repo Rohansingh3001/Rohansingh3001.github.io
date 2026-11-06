@@ -1,5 +1,16 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaTrophy, FaUsers, FaLightbulb } from "react-icons/fa";
+import { 
+  FaGithub, 
+  FaExternalLinkAlt, 
+  FaTrophy, 
+  FaUsers, 
+  FaLightbulb, 
+  FaBrain, 
+  FaCompass, 
+  FaShieldAlt, 
+  FaHeart, 
+  FaRocket 
+} from "react-icons/fa";
 import mindmatesimage from "../assets/TheMindMates.png";
 
 const projects = [
@@ -17,7 +28,7 @@ const projects = [
     link: "https://themindmates.in",
     tags: ["React", "Firebase", "AI/ML", "Python", "Mental Health"],
     color: "#F97316",
-    emoji: "🧠",
+    icon: <FaBrain />,
     category: "Mental Health",
   },
   {
@@ -33,7 +44,7 @@ const projects = [
     link: "https://mindcareer.themindmates.in",
     tags: ["React 19", "PostgreSQL", "Node.js", "Groq LLaMA 3.3", "Whisper STT"],
     color: "#3B82F6",
-    emoji: "🎯",
+    icon: <FaCompass />,
     category: "EdTech AI",
   },
   {
@@ -49,7 +60,7 @@ const projects = [
     link: "https://provium.vercel.app",
     tags: ["Noir ZK", "Solidity", "Base Sepolia", "AI Agents", "Next.js"],
     color: "#8B5CF6",
-    emoji: "🛡️",
+    icon: <FaShieldAlt />,
     category: "ZK & DeFi",
   },
   {
@@ -65,7 +76,7 @@ const projects = [
     link: "https://sahchari.themindmates.in",
     tags: ["React 19", "TypeScript", "Firebase", "Web Push", "Groq AI"],
     color: "#EC4899",
-    emoji: "🌸",
+    icon: <FaHeart />,
     category: "FemTech",
   },
 ];
@@ -162,7 +173,7 @@ const Projects = () => {
                               className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-3 shadow-md bg-white border border-[#E5D9C9]"
                               style={{ color: project.color }}
                             >
-                              {project.emoji || "🚀"}
+                              {project.icon || <FaRocket />}
                             </div>
                             <h4 className="font-bold text-xl text-[#111827] font-handwritten">{project.title}</h4>
                             <p className="text-xs text-[#4B5563] mt-1 font-medium">{project.tagline}</p>

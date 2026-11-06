@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaRocket, FaCode, FaBrain, FaUsers } from "react-icons/fa";
+import { FaRocket, FaCode, FaBrain, FaUsers, FaLaptopCode, FaRobot, FaNetworkWired, FaCloud } from "react-icons/fa";
 
 const About = () => {
   const stats = [
@@ -10,10 +10,30 @@ const About = () => {
   ];
 
   const skills = [
-    { title: "Full-Stack & Microservices", description: "Building scalable web apps and RESTful APIs with React.js, Node.js, Express, Python, and Firebase.", emoji: "💻" },
-    { title: "AI / ML & Autonomous Agents", description: "Designing intelligent agent workflows with LLMs, Groq, Agno framework, and ML models.", emoji: "🤖" },
-    { title: "Core CS & Systems", description: "Solid foundations in Data Structures & Algorithms (DSA), OOP, DBMS, and Computer Networks.", emoji: "📐" },
-    { title: "DevOps, Cloud & SAP", description: "Hands-on with Docker, CI/CD, Git, SDLC, and SAP Certified Back-End Developer in ABAP Cloud.", emoji: "⚡" },
+    { 
+      title: "Full-Stack & Microservices", 
+      description: "Building scalable web apps and RESTful APIs with React.js, Node.js, Express, Python, and Firebase.", 
+      icon: <FaLaptopCode />,
+      color: "#3B82F6"
+    },
+    { 
+      title: "AI / ML & Autonomous Agents", 
+      description: "Designing intelligent agent workflows with LLMs, Groq, Agno framework, and ML models.", 
+      icon: <FaRobot />,
+      color: "#8B5CF6"
+    },
+    { 
+      title: "Core CS & Systems", 
+      description: "Solid foundations in Data Structures & Algorithms (DSA), OOP, DBMS, and Computer Networks.", 
+      icon: <FaNetworkWired />,
+      color: "#F97316"
+    },
+    { 
+      title: "DevOps, Cloud & SAP", 
+      description: "Hands-on with Docker, CI/CD, Git, SDLC, and SAP Certified Back-End Developer in ABAP Cloud.", 
+      icon: <FaCloud />,
+      color: "#10B981"
+    },
   ];
 
   return (
@@ -119,7 +139,16 @@ const About = () => {
                 <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-[#3B82F6] rounded-full shadow" />
                 
                 <div className="flex items-start gap-4">
-                  <span className="text-4xl">{skill.emoji}</span>
+                  <div 
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm border"
+                    style={{ 
+                      backgroundColor: `${skill.color}15`, 
+                      color: skill.color,
+                      borderColor: `${skill.color}35` 
+                    }}
+                  >
+                    {skill.icon}
+                  </div>
                   <div>
                     <h4 className="text-lg font-semibold text-[#111827] mb-2">
                       {skill.title}
