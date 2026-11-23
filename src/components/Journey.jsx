@@ -36,6 +36,7 @@ const Journey = () => {
       description: "Completed 7-month Software Development Internship at Fortune Minds India LLP (Feb–Sep 2026). Scaled The MindMates ecosystem with MindCareer and Sahchari, and built Provium (Autonomous ZK Compliance on Base Sepolia).",
       icon: <FaCode />,
       image: fortunemindsImg,
+      imageBg: "bg-black",
       color: "#8B5CF6",
       achievements: ["Internship @ Fortune Minds", "Built MindCareer & Sahchari", "Provium ZK DeFi"],
     },
@@ -111,7 +112,7 @@ const Journey = () => {
                     whileHover={{ scale: 1.08, rotate: -4 }}
                   >
                     {item.image ? (
-                      <div className="w-5 h-5 sm:w-10 sm:h-10 mb-0 sm:mb-1 flex items-center justify-center overflow-hidden">
+                      <div className={`w-6 h-6 sm:w-11 sm:h-11 mb-0 sm:mb-1 flex items-center justify-center overflow-hidden rounded-md p-0.5 ${item.imageBg || "bg-white"}`}>
                         <img
                           src={item.image}
                           alt={item.title}

@@ -275,7 +275,7 @@ const About = () => {
                   target="journey"
                   color="#DC2626"
                   fitContain={true}
-                  bgClass="bg-white"
+                  bgClass="bg-black"
                 />
                 —I thrive on solving hard problems with code.
               </p>
