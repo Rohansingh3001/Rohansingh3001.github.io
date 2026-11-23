@@ -1,5 +1,115 @@
-import { motion } from "framer-motion";
-import { FaRocket, FaCode, FaBrain, FaUsers, FaLaptopCode, FaRobot, FaNetworkWired, FaCloud } from "react-icons/fa";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-scroll";
+import { 
+  FaRocket, 
+  FaCode, 
+  FaBrain, 
+  FaUsers, 
+  FaLaptopCode, 
+  FaRobot, 
+  FaNetworkWired, 
+  FaCloud,
+  FaBuilding,
+  FaTrophy
+} from "react-icons/fa";
+import mindmatesImg from "../assets/TheMindMates.jpg";
+import proviumImg from "../assets/Provium.png";
+import sahchariImg from "../assets/Sahchari.jpg";
+import mindcareerImg from "../assets/MindCareer.jpg";
+import profilePic from "../assets/Image.jpg";
+
+// ElevenLabs-style inline sticker chip component
+const InlineSticker = ({ 
+  image, 
+  icon, 
+  name, 
+  tag, 
+  rotate = "rotate-0", 
+  target, 
+  color = "#F97316", 
+  bgGradient, 
+  isAvatar = false,
+  link
+}) => {
+  const [hovered, setHovered] = useState(false);
+
+  const content = (
+    <span
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="inline-flex items-center justify-center mx-1 sm:mx-1.5 relative group cursor-pointer select-none align-[-3px] sm:align-[-4px]"
+    >
+      {/* Floating Micro Tooltip */}
+      <AnimatePresence>
+        {hovered && (
+          <motion.span
+            initial={{ opacity: 0, y: 5, scale: 0.92 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 3, scale: 0.94 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="absolute -top-9 sm:-top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-medium bg-[#111827]/95 text-white border border-white/20 whitespace-nowrap pointer-events-none z-50 shadow-xl backdrop-blur-md flex items-center gap-1.5"
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: color }}
+            />
+            <span className="font-semibold text-white">{name}</span>
+            <span className="text-white/40 font-mono">/</span>
+            <span className="text-[10px] text-orange-300 font-mono">{tag}</span>
+          </motion.span>
+        )}
+      </AnimatePresence>
+
+      {/* Physical Sticker Frame */}
+      <motion.span
+        whileHover={{ scale: 1.25, rotate: 0 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 420, damping: 22 }}
+        className={`relative inline-flex items-center justify-center ${rotate} ${
+          isAvatar ? "rounded-full" : "rounded-lg sm:rounded-xl"
+        } w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 overflow-hidden border border-white/90 shadow-sm group-hover:shadow-lg transition-shadow duration-300 ring-1 ring-black/10 flex-shrink-0 ${
+          bgGradient ? `bg-gradient-to-tr ${bgGradient}` : "bg-neutral-900"
+        }`}
+      >
+        {image ? (
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+          />
+        ) : (
+          icon
+        )}
+
+        {/* Specular sheen */}
+        <span
+          className={`absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none ${
+            isAvatar ? "rounded-full" : "rounded-lg sm:rounded-xl"
+          }`}
+        />
+      </motion.span>
+    </span>
+  );
+
+  if (target) {
+    return (
+      <Link to={target} smooth={true} duration={600} offset={-60}>
+        {content}
+      </Link>
+    );
+  }
+
+  if (link) {
+    return (
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+};
 
 const About = () => {
   const stats = [
@@ -81,21 +191,108 @@ const About = () => {
                Who I Am
             </h3>
             
-            <div className="text-[#4B5563] text-sm sm:text-base md:text-lg leading-relaxed space-y-3 sm:space-y-4">
+            <div className="text-[#374151] text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose space-y-4 sm:space-y-5">
               <p>
-                Hey, I'm <span className="text-[#1F2933] font-semibold">Rohan Singh</span>—a full-stack builder and B.Tech CSE (AIML) student at <span className="text-[#1F2933] font-semibold">Narula Institute of Technology (NiT'27)</span>.
+                Hey, I'm{" "}
+                <span className="text-[#111827] font-bold">Rohan Singh</span>
+                <InlineSticker
+                  image={profilePic}
+                  name="Rohan Singh"
+                  tag="NiT'27 Builder"
+                  rotate="-rotate-3"
+                  target="home"
+                  color="#F59E0B"
+                  isAvatar={true}
+                />
+                —a full-stack builder and B.Tech CSE (AIML) student at{" "}
+                <span className="text-[#111827] font-semibold">
+                  Narula Institute of Technology (NiT'27)
+                </span>.
               </p>
+
               <p>
                 Whether it's founding{" "}
-                <span className="text-[#F97316] font-semibold">The MindMates</span> ecosystem (including{" "}
-                <span className="text-[#3B82F6] font-semibold">MindCareer</span> and{" "}
-                <span className="text-[#EC4899] font-semibold">Sahchari</span>), engineering{" "}
-                <span className="text-[#8B5CF6] font-semibold">Provium</span> (Autonomous ZK compliance for DeFi), or delivering production features during my 7-month internship at{" "}
-                <span className="text-[#1F2933] font-semibold">Fortune Minds India LLP</span>—I thrive on solving hard problems with code.
+                <span className="text-[#F97316] font-bold">The MindMates</span>
+                <InlineSticker
+                  image={mindmatesImg}
+                  name="The MindMates"
+                  tag="TiE Finalist AI"
+                  rotate="-rotate-4"
+                  target="projects"
+                  color="#F97316"
+                />{" "}
+                ecosystem (including{" "}
+                <span className="text-[#3B82F6] font-bold">MindCareer</span>
+                <InlineSticker
+                  image={mindcareerImg}
+                  name="MindCareer"
+                  tag="Career DNA & AI"
+                  rotate="rotate-3"
+                  target="projects"
+                  color="#3B82F6"
+                />{" "}
+                and{" "}
+                <span className="text-[#EC4899] font-bold">Sahchari</span>
+                <InlineSticker
+                  image={sahchariImg}
+                  name="Sahchari"
+                  tag="FemTech AI"
+                  rotate="-rotate-3"
+                  target="projects"
+                  color="#EC4899"
+                />
+                ), engineering{" "}
+                <span className="text-[#8B5CF6] font-bold">Provium</span>
+                <InlineSticker
+                  image={proviumImg}
+                  name="Provium"
+                  tag="ZK Solvency DeFi"
+                  rotate="rotate-4"
+                  target="projects"
+                  color="#8B5CF6"
+                />{" "}
+                (Autonomous ZK compliance for DeFi), or delivering production features during my 7-month internship at{" "}
+                <span className="text-[#111827] font-bold">Fortune Minds India LLP</span>
+                <InlineSticker
+                  icon={<FaBuilding className="text-white text-[11px] sm:text-xs" />}
+                  name="Fortune Minds"
+                  tag="7-Mo SDE Intern"
+                  rotate="-rotate-2"
+                  target="journey"
+                  color="#2563EB"
+                  bgGradient="from-[#1E3A8A] to-[#3B82F6]"
+                />
+                —I thrive on solving hard problems with code.
               </p>
+
               <p>
-                I believe in learning by doing, failing fast, and iterating faster. That's why I've competed in 10+ hackathons, built 25+ projects, and served as{" "}
-                <span className="text-[#1F2933] font-semibold">Ex-Web Dev Associate at GDGoC NiT</span>.
+                I believe in learning by doing, failing fast, and iterating faster. That's why I've competed in{" "}
+                <span className="text-[#111827] font-semibold">10+ hackathons</span>
+                <InlineSticker
+                  icon={<FaTrophy className="text-amber-300 text-[11px] sm:text-xs" />}
+                  name="Hackathons"
+                  tag="10+ Competitions"
+                  rotate="rotate-3"
+                  target="journey"
+                  color="#F59E0B"
+                  bgGradient="from-[#78350F] to-[#D97706]"
+                />
+                , built 25+ projects, and served as{" "}
+                <span className="text-[#111827] font-semibold">Ex-Web Dev Associate at GDGoC NiT</span>
+                <InlineSticker
+                  icon={
+                    <span className="font-mono font-black text-[9px] sm:text-[10px] text-white tracking-tighter">
+                      &lt;/&gt;
+                    </span>
+                  }
+                  name="GDGoC NiT"
+                  tag="Web Associate"
+                  rotate="-rotate-3"
+                  target="community"
+                  color="#10B981"
+                  bgGradient="from-[#047857] to-[#10B981]"
+                />
+                .
               </p>
               
               {/* Highlighted motto with doodle */}
