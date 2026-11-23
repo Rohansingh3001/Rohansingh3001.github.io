@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
-import { 
-  FaRocket, 
-  FaCode, 
-  FaBrain, 
-  FaUsers, 
-  FaLaptopCode, 
-  FaRobot, 
-  FaNetworkWired, 
+import {
+  FaRocket,
+  FaCode,
+  FaBrain,
+  FaUsers,
+  FaLaptopCode,
+  FaRobot,
+  FaNetworkWired,
   FaCloud,
   FaBuilding,
   FaTrophy
@@ -22,15 +22,15 @@ import fortunemindsImg from "../assets/fortuneminds.png";
 import gdgocImg from "../assets/gdgoc.jpg";
 
 // ElevenLabs-style inline sticker chip component
-const InlineSticker = ({ 
-  image, 
-  icon, 
-  name, 
-  tag, 
-  rotate = "rotate-0", 
-  target, 
-  color = "#F97316", 
-  bgGradient, 
+const InlineSticker = ({
+  image,
+  icon,
+  name,
+  tag,
+  rotate = "rotate-0",
+  target,
+  color = "#F97316",
+  bgGradient,
   bgClass,
   fitContain = false,
   isAvatar = false,
@@ -90,9 +90,8 @@ const InlineSticker = ({
 
         {/* Specular sheen */}
         <span
-          className={`absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none ${
-            isAvatar ? "rounded-full" : "rounded-lg sm:rounded-xl"
-          }`}
+          className={`absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none ${isAvatar ? "rounded-full" : "rounded-lg sm:rounded-xl"
+            }`}
         />
       </motion.span>
     </span>
@@ -126,27 +125,27 @@ const About = () => {
   ];
 
   const skills = [
-    { 
-      title: "Full-Stack & Microservices", 
-      description: "Building scalable web apps and RESTful APIs with React.js, Node.js, Express, Python, and Firebase.", 
+    {
+      title: "Full-Stack & Microservices",
+      description: "Building scalable web apps and RESTful APIs with React.js, Node.js, Express, Python, and Firebase.",
       icon: <FaLaptopCode />,
       color: "#3B82F6"
     },
-    { 
-      title: "AI / ML & Autonomous Agents", 
-      description: "Designing intelligent agent workflows with LLMs, Groq, Agno framework, and ML models.", 
+    {
+      title: "AI / ML & Autonomous Agents",
+      description: "Designing intelligent agent workflows with LLMs, Groq, Agno framework, and ML models.",
       icon: <FaRobot />,
       color: "#8B5CF6"
     },
-    { 
-      title: "Core CS & Systems", 
-      description: "Solid foundations in Data Structures & Algorithms (DSA), OOP, DBMS, and Computer Networks.", 
+    {
+      title: "Core CS & Systems",
+      description: "Solid foundations in Data Structures & Algorithms (DSA), OOP, DBMS, and Computer Networks.",
       icon: <FaNetworkWired />,
       color: "#F97316"
     },
-    { 
-      title: "DevOps, Cloud & SAP", 
-      description: "Hands-on with Docker, CI/CD, Git, SDLC, and SAP Certified Back-End Developer in ABAP Cloud.", 
+    {
+      title: "DevOps, Cloud & SAP",
+      description: "Hands-on with Docker, CI/CD, Git, SDLC, and SAP Certified Back-End Developer in ABAP Cloud.",
       icon: <FaCloud />,
       color: "#10B981"
     },
@@ -169,7 +168,7 @@ const About = () => {
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#1F2937] mb-4 sm:mb-6 font-handwritten break-words">
             About Me
           </h2>
-          
+
           {/* Hand-drawn underline */}
           <div className="flex justify-center">
             <div className="h-1 w-28 sm:w-32 bg-[#F97316]/60 rounded-full blur-[0.5px] rotate-[-1deg]" />
@@ -187,16 +186,16 @@ const About = () => {
           <div className="relative bg-[#FDF9F3] border-2 border-[#E5D9C9] rounded-xl shadow-[0_18px_40px_rgba(15,23,42,0.35)] p-5 sm:p-8 md:p-12 overflow-hidden">
             {/* Tape effect */}
             <div className="absolute -top-3 left-8 sm:left-16 h-6 w-20 sm:w-24 bg-[#E5E7EB]/80 rounded-sm shadow-md rotate-[2deg]" />
-            
+
             {/* Hand-drawn arrow pointing to heading */}
             <div className="hidden md:block absolute -left-8 top-8 text-2xl rotate-[180deg] opacity-60">
-              
+
             </div>
-            
+
             <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4 sm:mb-6 font-handwritten">
-               Who I Am
+              Who I Am
             </h3>
-            
+
             <div className="text-[#374151] text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose space-y-4 sm:space-y-5">
               <p>
                 Hey, I'm{" "}
@@ -306,7 +305,7 @@ const About = () => {
                 />
                 .
               </p>
-              
+
               {/* Highlighted motto with doodle */}
               <div className="relative mt-4 sm:mt-6 p-3 sm:p-4 bg-[#FEF3C7]/30 border-l-4 border-[#F97316] rounded">
                 <p className="text-[#F97316] font-semibold italic text-base sm:text-lg">
@@ -314,7 +313,7 @@ const About = () => {
                 </p>
                 {/* Star doodle */}
                 <span className="hidden sm:inline absolute -right-4 -top-2 text-2xl rotate-[15deg]">
-                  
+
                 </span>
               </div>
             </div>
@@ -332,7 +331,7 @@ const About = () => {
           <h3 className="text-2xl sm:text-3xl font-handwritten font-bold text-[#1F2937] text-center mb-6 sm:mb-8">
             What I Do
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {skills.map((skill, index) => (
               <motion.div
@@ -346,14 +345,14 @@ const About = () => {
               >
                 {/* Small pin */}
                 <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-[#3B82F6] rounded-full shadow" />
-                
+
                 <div className="flex items-start gap-3.5 sm:gap-4">
-                  <div 
+                  <div
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 shadow-sm border"
-                    style={{ 
-                      backgroundColor: `${skill.color}15`, 
+                    style={{
+                      backgroundColor: `${skill.color}15`,
                       color: skill.color,
-                      borderColor: `${skill.color}35` 
+                      borderColor: `${skill.color}35`
                     }}
                   >
                     {skill.icon}
@@ -382,7 +381,7 @@ const About = () => {
           <h3 className="text-2xl sm:text-3xl font-handwritten font-bold text-[#1F2937] text-center mb-6 sm:mb-8">
             Quick Stats
           </h3>
-          
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {stats.map((stat, index) => (
               <motion.div
@@ -399,7 +398,7 @@ const About = () => {
                 <div className="absolute top-1 right-1 w-2 h-2 border-t-2 border-r-2 border-[#E5D9C9]" />
                 <div className="absolute bottom-1 left-1 w-2 h-2 border-b-2 border-l-2 border-[#E5D9C9]" />
                 <div className="absolute bottom-1 right-1 w-2 h-2 border-b-2 border-r-2 border-[#E5D9C9]" />
-                
+
                 <div className="text-2xl sm:text-3xl mb-2 sm:mb-3 text-[#F97316] flex justify-center">{stat.icon}</div>
                 <div className="text-xl sm:text-3xl md:text-4xl font-bold text-[#111827] mb-1 sm:mb-2 truncate">
                   {stat.number}
