@@ -13,10 +13,10 @@ import {
   FaBuilding,
   FaTrophy
 } from "react-icons/fa";
-import mindmatesImg from "../assets/TheMindMates.jpg";
-import proviumImg from "../assets/Provium.png";
-import sahchariImg from "../assets/Sahchari.jpg";
-import mindcareerImg from "../assets/MindCareer.jpg";
+import mindmatesLogo from "../assets/mindmates_logo.png";
+import proviumLogo from "../assets/provium_logo.png";
+import sahchariLogo from "../assets/sahchari_logo.jpg";
+import mindcareerLogo from "../assets/mindcareer_logo.jpg";
 import profilePic from "../assets/Image.jpg";
 import fortunemindsImg from "../assets/fortuneminds.png";
 import gdgocImg from "../assets/gdgoc.jpg";
@@ -220,42 +220,50 @@ const About = () => {
                 Whether it's founding{" "}
                 <span className="text-[#F97316] font-bold">The MindMates</span>
                 <InlineSticker
-                  image={mindmatesImg}
+                  image={mindmatesLogo}
                   name="The MindMates"
                   tag="TiE Finalist AI"
                   rotate="-rotate-4"
                   target="projects"
                   color="#F97316"
+                  fitContain={true}
+                  bgClass="bg-white"
                 />{" "}
                 ecosystem (including{" "}
                 <span className="text-[#3B82F6] font-bold">MindCareer</span>
                 <InlineSticker
-                  image={mindcareerImg}
+                  image={mindcareerLogo}
                   name="MindCareer"
                   tag="Career DNA & AI"
                   rotate="rotate-3"
                   target="projects"
-                  color="#3B82F6"
+                  color="#EA580C"
+                  fitContain={true}
+                  bgClass="bg-white"
                 />{" "}
                 and{" "}
                 <span className="text-[#EC4899] font-bold">Sahchari</span>
                 <InlineSticker
-                  image={sahchariImg}
+                  image={sahchariLogo}
                   name="Sahchari"
                   tag="FemTech AI"
                   rotate="-rotate-3"
                   target="projects"
                   color="#EC4899"
+                  fitContain={true}
+                  bgClass="bg-white"
                 />
                 ), engineering{" "}
                 <span className="text-[#8B5CF6] font-bold">Provium</span>
                 <InlineSticker
-                  image={proviumImg}
+                  image={proviumLogo}
                   name="Provium"
                   tag="ZK Solvency DeFi"
                   rotate="rotate-4"
                   target="projects"
-                  color="#8B5CF6"
+                  color="#0D9488"
+                  fitContain={true}
+                  bgClass="bg-white"
                 />{" "}
                 (Autonomous ZK compliance for DeFi), or delivering production features during my 7-month internship at{" "}
                 <span className="text-[#111827] font-bold">Fortune Minds India LLP</span>

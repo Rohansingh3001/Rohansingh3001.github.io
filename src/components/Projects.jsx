@@ -15,6 +15,10 @@ import mindmatesimage from "../assets/TheMindMates.jpg";
 import mindcareerimage from "../assets/MindCareer.jpg";
 import proviumimage from "../assets/Provium.png";
 import sahchariimage from "../assets/Sahchari.jpg";
+import mindmatesLogo from "../assets/mindmates_logo.png";
+import mindcareerLogo from "../assets/mindcareer_logo.jpg";
+import proviumLogo from "../assets/provium_logo.png";
+import sahchariLogo from "../assets/sahchari_logo.jpg";
 
 const projects = [
   {
@@ -25,6 +29,7 @@ const projects = [
     solution: "Architected an AI-powered platform featuring 24/7 empathetic conversational companion, mood tracking, guided wellness rituals, and peer connections.",
     impact: "Finalist at TiE Kolkata 2025 (won ₹10,000 prize grant). Helping students find community and mental wellness.",
     image: mindmatesimage,
+    logo: mindmatesLogo,
     year: "2025 - Present",
     role: "Founder & Lead Developer",
     github: "https://github.com/Rohansingh3001/The-Mindmate",
@@ -42,6 +47,7 @@ const projects = [
     solution: "Built a 10-archetype Career DNA assessment engine, real-time adaptive AI mock interviews (with Groq Whisper speech-to-text & camera posture detection), and roadmaps for 40+ modern careers.",
     impact: "Empowers Indian students to discover tailored career paths with real market salary insights and tailored 3-month action plans.",
     image: mindcareerimage,
+    logo: mindcareerLogo,
     year: "2026",
     role: "Founder & Full-Stack Architect",
     github: "https://github.com/Rohansingh3001/mindCareer",
@@ -59,6 +65,7 @@ const projects = [
     solution: "Developed an autonomous multi-agent pipeline generating Noir zero-knowledge proofs (UltraHonk) verifying lending solvency on Base Sepolia, paired with an on-chain audit portal.",
     impact: "Provides verifiable proof of solvency inspired by the US GENIUS Act 1:1 reserve transparency goals.",
     image: proviumimage,
+    logo: proviumLogo,
     year: "2026",
     role: "ZK & Full-Stack Developer",
     github: "https://github.com/Rohansingh3001/Provium",
@@ -76,6 +83,7 @@ const projects = [
     solution: "Built a culturally attuned menstrual health web app with phase-mapped lifestyle guidance across 9 professions, Groq/Qwen 2.5 AI health chat, and automated Web Push reminders.",
     impact: "Culturally attuned reproductive and cycle intelligence helping women plan work, nutrition, and wellness.",
     image: sahchariimage,
+    logo: sahchariLogo,
     year: "2026",
     role: "Lead Developer",
     github: "https://github.com/Rohansingh3001/Sahchari",
@@ -168,9 +176,18 @@ const Projects = () => {
                       {project.year}
                     </span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] font-handwritten leading-tight">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-2.5">
+                    {project.logo && (
+                      <img
+                        src={project.logo}
+                        alt={project.title}
+                        className="w-8 h-8 rounded-lg object-contain bg-white border border-[#E5D9C9] p-1 shadow-xs flex-shrink-0"
+                      />
+                    )}
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] font-handwritten leading-tight">
+                      {project.title}
+                    </h3>
+                  </div>
                   <p className="text-xs text-[#F97316] font-semibold mt-0.5">
                     {project.role}
                   </p>
@@ -253,9 +270,18 @@ const Projects = () => {
                   <div className="lg:col-span-7 space-y-4">
                     {/* Desktop Title & Role (hidden on mobile since it's at top) */}
                     <div className="hidden lg:block">
-                      <h3 className="text-3xl md:text-4xl font-bold text-[#111827] mb-1 font-handwritten">
-                        {project.title}
-                      </h3>
+                      <div className="flex items-center gap-3 mb-1">
+                        {project.logo && (
+                          <img
+                            src={project.logo}
+                            alt={project.title}
+                            className="w-10 h-10 rounded-xl object-contain bg-white border border-[#E5D9C9] p-1 shadow-xs flex-shrink-0"
+                          />
+                        )}
+                        <h3 className="text-3xl md:text-4xl font-bold text-[#111827] font-handwritten">
+                          {project.title}
+                        </h3>
+                      </div>
                       <p className="text-base md:text-lg italic text-[#4B5563] mb-1">{project.tagline}</p>
                       <p className="text-sm font-semibold text-[#F97316]">{project.role}</p>
                     </div>
