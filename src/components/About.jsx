@@ -18,6 +18,8 @@ import proviumImg from "../assets/Provium.png";
 import sahchariImg from "../assets/Sahchari.jpg";
 import mindcareerImg from "../assets/MindCareer.jpg";
 import profilePic from "../assets/Image.jpg";
+import fortunemindsImg from "../assets/fortuneminds.png";
+import gdgocImg from "../assets/gdgoc.jpg";
 
 // ElevenLabs-style inline sticker chip component
 const InlineSticker = ({ 
@@ -29,6 +31,8 @@ const InlineSticker = ({
   target, 
   color = "#F97316", 
   bgGradient, 
+  bgClass,
+  fitContain = false,
   isAvatar = false,
   link
 }) => {
@@ -69,14 +73,16 @@ const InlineSticker = ({
         className={`relative inline-flex items-center justify-center ${rotate} ${
           isAvatar ? "rounded-full" : "rounded-lg sm:rounded-xl"
         } w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 overflow-hidden border border-white/90 shadow-sm group-hover:shadow-lg transition-shadow duration-300 ring-1 ring-black/10 flex-shrink-0 ${
-          bgGradient ? `bg-gradient-to-tr ${bgGradient}` : "bg-neutral-900"
+          bgClass ? bgClass : (bgGradient ? `bg-gradient-to-tr ${bgGradient}` : "bg-neutral-900")
         }`}
       >
         {image ? (
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+            className={`w-full h-full ${
+              fitContain ? "object-contain p-0.5 sm:p-1" : "object-cover"
+            } object-center group-hover:scale-105 transition-transform duration-300`}
           />
         ) : (
           icon
@@ -254,13 +260,14 @@ const About = () => {
                 (Autonomous ZK compliance for DeFi), or delivering production features during my 7-month internship at{" "}
                 <span className="text-[#111827] font-bold">Fortune Minds India LLP</span>
                 <InlineSticker
-                  icon={<FaBuilding className="text-white text-[11px] sm:text-xs" />}
+                  image={fortunemindsImg}
                   name="Fortune Minds"
                   tag="7-Mo SDE Intern"
                   rotate="-rotate-2"
                   target="journey"
-                  color="#2563EB"
-                  bgGradient="from-[#1E3A8A] to-[#3B82F6]"
+                  color="#DC2626"
+                  fitContain={true}
+                  bgClass="bg-white"
                 />
                 —I thrive on solving hard problems with code.
               </p>
@@ -280,17 +287,14 @@ const About = () => {
                 , built 25+ projects, and served as{" "}
                 <span className="text-[#111827] font-semibold">Ex-Web Dev Associate at GDGoC NiT</span>
                 <InlineSticker
-                  icon={
-                    <span className="font-mono font-black text-[9px] sm:text-[10px] text-white tracking-tighter">
-                      &lt;/&gt;
-                    </span>
-                  }
+                  image={gdgocImg}
                   name="GDGoC NiT"
                   tag="Web Associate"
                   rotate="-rotate-3"
                   target="community"
-                  color="#10B981"
-                  bgGradient="from-[#047857] to-[#10B981]"
+                  color="#4285F4"
+                  fitContain={true}
+                  bgClass="bg-white"
                 />
                 .
               </p>

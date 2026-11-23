@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { FaUsers, FaTrophy, FaMicrophone, FaHandshake } from "react-icons/fa";
+import gdgocImg from "../assets/gdgoc.jpg";
 
 const CommunityLeadership = () => {
   const leadership = [
@@ -9,6 +10,7 @@ const CommunityLeadership = () => {
       organization: "Google Developer Groups on Campus NiT",
       description: "Led web development initiatives, organized workshops, and mentored 400+ students in modern web technologies.",
       icon: <FaUsers />,
+      image: gdgocImg,
       color: "#3B82F6",
       stats: ["400+ Students", "Multiple Workshops", "Community Building"],
     },
@@ -88,12 +90,25 @@ const CommunityLeadership = () => {
                   {/* Icon & Title Header Row */}
                   <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <motion.div
-                      className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl text-white text-xl sm:text-3xl flex items-center justify-center flex-shrink-0 shadow-md"
-                      style={{ backgroundColor: item.color }}
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
+                      className={`w-11 h-11 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md overflow-hidden ${
+                        item.image ? "bg-white border-2 p-1" : "text-white text-xl sm:text-3xl"
+                      }`}
+                      style={{
+                        backgroundColor: item.image ? "#FFFFFF" : item.color,
+                        borderColor: item.color,
+                      }}
+                      whileHover={{ scale: 1.1, rotate: item.image ? -4 : 360 }}
+                      transition={{ duration: 0.5 }}
                     >
-                      {item.icon}
+                      {item.image ? (
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-contain"
+                        />
+                      ) : (
+                        item.icon
+                      )}
                     </motion.div>
 
                     <div className="min-w-0 flex-1">

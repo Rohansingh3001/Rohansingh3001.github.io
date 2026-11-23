@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { FaLightbulb, FaRocket, FaTrophy, FaCode } from "react-icons/fa";
+import fortunemindsImg from "../assets/fortuneminds.png";
+import gdgocImg from "../assets/gdgoc.jpg";
 
 const Journey = () => {
   const timeline = [
@@ -24,6 +26,7 @@ const Journey = () => {
       title: "Founding & Leadership",
       description: "Founded The MindMates, became a TiE Kolkata Finalist (won ₹10k grant), and served as Web Dev Associate at GDGoC NiT mentoring 400+ students.",
       icon: <FaTrophy />,
+      image: gdgocImg,
       color: "#22C55E",
       achievements: ["TiE Kolkata Finalist", "Founded The MindMates", "GDGoC NiT Associate"],
     },
@@ -32,6 +35,7 @@ const Journey = () => {
       title: "Industry Internship & Ecosystem Scale",
       description: "Completed 7-month Software Development Internship at Fortune Minds India LLP (Feb–Sep 2026). Scaled The MindMates ecosystem with MindCareer and Sahchari, and built Provium (Autonomous ZK Compliance on Base Sepolia).",
       icon: <FaCode />,
+      image: fortunemindsImg,
       color: "#8B5CF6",
       achievements: ["Internship @ Fortune Minds", "Built MindCareer & Sahchari", "Provium ZK DeFi"],
     },
@@ -106,9 +110,19 @@ const Journey = () => {
                     style={{ borderColor: item.color }}
                     whileHover={{ scale: 1.08, rotate: -4 }}
                   >
-                    <div className="text-lg sm:text-2xl mb-0 sm:mb-1" style={{ color: item.color }}>
-                      {item.icon}
-                    </div>
+                    {item.image ? (
+                      <div className="w-5 h-5 sm:w-10 sm:h-10 mb-0 sm:mb-1 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="text-lg sm:text-2xl mb-0 sm:mb-1" style={{ color: item.color }}>
+                        {item.icon}
+                      </div>
+                    )}
                     {/* Year on Desktop */}
                     <div className="hidden sm:block text-xs font-bold text-[#111827]">{item.year}</div>
                   </motion.div>
