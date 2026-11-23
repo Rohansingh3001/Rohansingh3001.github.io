@@ -223,26 +223,9 @@ const ManifestoBanner = () => {
             <span className="text-white font-extrabold">real people love.</span>
           </h2>
 
-          {/* Bottom Interactive Bar */}
-          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-400 max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 text-neutral-300">
-              <span className="text-orange-400">✦</span>
-              <span>Tap or hover stickers to inspect architecture</span>
-            </div>
-
-            <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-center text-[11px] text-neutral-400">
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08]">
-                4 Production Systems
-              </span>
-              <span className="hidden sm:inline text-white/20">•</span>
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08]">
-                Agentic AI &amp; Zero-Knowledge
-              </span>
-              <span className="hidden sm:inline text-white/20">•</span>
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-emerald-400">
-                100% Shipped
-              </span>
-            </div>
+          {/* Subtle Minimal Caption */}
+          <div className="mt-8 sm:mt-10 flex items-center justify-center gap-2 text-xs font-mono text-neutral-500">
+            <span>✦ Tap or hover any sticker to explore ✦</span>
           </div>
         </motion.div>
       </div>
