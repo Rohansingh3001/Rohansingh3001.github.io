@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import ManifestoBanner from "./components/ManifestoBanner";
 import About from "./components/About";
 import Journey from "./components/Journey";
 import CommunityLeadership from "./components/CommunityLeadership";
@@ -53,6 +54,7 @@ function App() {
 
           <Navbar />
           <HeroSection />
+          <ManifestoBanner />
           <About />
           <Journey />
           <CommunityLeadership />
